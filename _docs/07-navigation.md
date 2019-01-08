@@ -18,17 +18,17 @@ To define these links add titles and URLs under the `main` key in `_data/navigat
 main:
   - title: "Quick-Start Guide"
     url: /docs/quick-start-guide/
-  - title: "Posts"
+  - title: "按年分类"
     url: /year-archive/
-  - title: "Categories"
+  - title: "分类"
     url: /categories/
-  - title: "Tags"
+  - title: "标签"
     url: /tags/
-  - title: "Pages"
+  - title: "文章随笔"
     url: /page-archive/
-  - title: "Collections"
+  - title: "个人爱好"
     url: /collection-archive/
-  - title: "External Link"
+  - title: "外部链接"
     url: https://google.com
 ```
 
