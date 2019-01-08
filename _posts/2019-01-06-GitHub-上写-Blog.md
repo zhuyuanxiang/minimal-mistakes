@@ -14,7 +14,7 @@ toc_label: "文章提纲"
 
 ## 预备知识：
 
-必须：Git，GitHub，[Jekyll](http://ju.outofmemory.cn/entry/98471)，[Markdown](https://www.jianshu.com/p/191d1e21f7ed)，[YAML](https://blog.csdn.net/vincent_hbl/article/details/75411243)
+必须：Git，GitHub，[Jekyll](http://ju.outofmemory.cn/entry/98471)，[Markdown](http://wow.kuapp.com/markdown/index.html)，[YAML](https://blog.csdn.net/vincent_hbl/article/details/75411243)
 
 可选：HTML，JavaScript，CSS，XML
 
