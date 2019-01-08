@@ -73,6 +73,30 @@
         </li>
       {% endif %}
 
+      {% if author.sina %}
+        <li>
+          <a href="http://weibo.com/{{ author.sina }}" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fas fa-fw fa-key" aria-hidden="true"></i> Sina
+          </a>
+        </li>
+      {% endif %}
+
+      {% if author.blogjava %}
+        <li>
+          <a href="http://{{ author.blogjava }}.blogjava.net" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fas fa-fw fa-key" aria-hidden="true"></i> Sina
+          </a>
+        </li>
+      {% endif %}
+
+      {% if author.cnblogs %}
+        <li>
+          <a href="http://www.cnblogs.com/{{ author.cnblogs }}" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fas fa-fw fa-key" aria-hidden="true"></i> Sina
+          </a>
+        </li>
+      {% endif %}
+
       {% if author.keybase %}
         <li>
           <a href="https://keybase.io/{{ author.keybase }}" itemprop="sameAs" rel="nofollow noopener noreferrer">
