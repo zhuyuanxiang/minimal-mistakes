@@ -121,7 +121,7 @@ author:
     - label: "一个平凡人"
       icon: "fas fa-fw fa-link"
       # url: "https://www.cnblogs.com/zhuyx"
-    - label: "douuban"
+    - label: "douban（豆瓣）"
       icon: "fas fa-fw fa-link"
       url: "https://www.douban.com/people/zhuyuanxiang/"
     - label: "Twitter"
