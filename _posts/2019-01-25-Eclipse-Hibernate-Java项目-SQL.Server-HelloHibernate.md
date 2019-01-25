@@ -47,62 +47,62 @@ toc_sticky: true
 ### 创建代码
 * 创建一个新的类Message
     ```java
-    package sample.entity;
-    public class Message {
-        private String message;
-        public Message(String message) {
-            this.message = message;}
-        public String getMessage() {
-            return message;}
-        public void setMessage(String message) {
-            this.message = message;}
-    }
+        package sample.entity;
+        public class Message {
+            private String message;
+            public Message(String message) {
+                this.message = message;}
+            public String getMessage() {
+                return message;}
+            public void setMessage(String message) {
+                this.message = message;}
+        }
 * 创建一个测试类
     ```java
-    package sample.entity;
-    public class PopulateMessages {
+        package sample.entity;
+        public class PopulateMessages {
 
-        public static void main(String[] args) {
-            SessionFactory factory = new Configuration().configure().buildSessionFactory();
-            Session session = factory.openSession();
-            session.beginTransaction();
+            public static void main(String[] args) {
+                SessionFactory factory = new Configuration().configure().buildSessionFactory();
+                Session session = factory.openSession();
+                session.beginTransaction();
 
-            Message message = new Message("Hibernated");
-            session.save(message);
-            session.getTransaction().commit();
-            session.close();
+                Message message = new Message("Hibernated");
+                session.save(message);
+                session.getTransaction().commit();
+                session.close();
+            }
         }
-    }
 * 创建一个Hibernate的配置文件：“New→Other→Hibernate Configuration File→hibernate.cfg.xml”
     ```xml
-    <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE hibernate-configuration PUBLIC 
-        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
-        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
-    <hibernate-configuration>
-    <session-factory name="Hibernate">
-        <property name="hibernate.connection.driver_class">net.sourceforge.jtds.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:jtds:sqlserver://127.0.0.1:1433;DatabaseName=hibernate</property>
-        <property name="hibernate.connection.username">sa</property>
-        <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
-        <property name="hibernate.show_sql">true</property>
-        <mapping resource="sample/entity/Message.hbm.xml"/>
-    </session-factory>
-    </hibernate-configuration>
+        <?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE hibernate-configuration PUBLIC 
+            "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+            "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+        <hibernate-configuration>
+        <session-factory name="Hibernate">
+            <property name="hibernate.connection.driver_class">net.sourceforge.jtds.jdbc.Driver</property>
+            <property name="hibernate.connection.url">jdbc:jtds:sqlserver://127.0.0.1:1433;DatabaseName=hibernate</property>
+            <property name="hibernate.connection.username">sa</property>
+            <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+            <property name="hibernate.show_sql">true</property>
+            <mapping resource="sample/entity/Message.hbm.xml"/>
+        </session-factory>
+        </hibernate-configuration>
 * 创建一个Hibernate的映射文件：“New→Other→Hibernate XML Mapping File”，把多余的文件和目录移除，“Add Class→Message→Finish”就可以了。
     ```xml
-    <?xml version="1.0"?>
-    <!DOCTYPE hibernate-mapping PUBLIC 
-        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-    <!-- Generated 2019-1-23 19:49:53 by Hibernate Tools 3.5.0.Final -->
-    <hibernate-mapping>
-        <class name="sample.entity.Message" table="MESSAGE">
-            <id name="message" type="java.lang.String">
-                <column name="MESSAGE" />
-                <generator class="assigned" />
-            </id>
-        </class>
-    </hibernate-mapping>
+        <?xml version="1.0"?>
+        <!DOCTYPE hibernate-mapping PUBLIC 
+            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+        <!-- Generated 2019-1-23 19:49:53 by Hibernate Tools 3.5.0.Final -->
+        <hibernate-mapping>
+            <class name="sample.entity.Message" table="MESSAGE">
+                <id name="message" type="java.lang.String">
+                    <column name="MESSAGE" />
+                    <generator class="assigned" />
+                </id>
+            </class>
+        </hibernate-mapping>
 ## 执行项目
 * 运行PopulateMessages就可以看到结果了。
