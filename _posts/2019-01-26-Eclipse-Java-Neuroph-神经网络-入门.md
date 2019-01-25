@@ -36,17 +36,17 @@ toc_sticky: true
 ### 理解感知机的代码
 * 单层感知机：neuroph-samples-2.94.jar中org.neuroph.samples.PerceptronSample.class
   ```java
-    // create training set (logical AND function)：创建训练集（符合逻辑与函数）
-    DataSet trainingSet = new DataSet(2, 1);trainingSet.addRow(...);
-    // create perceptron neural network：创建感知机(两个入，一个出，就是最简单的单层一个神经元的神经网络)
-    NeuralNetwork myPerceptron = new Perceptron(2, 1);
-    // learn the training set：学习这个训练集，就是为了得到神经网络的参数
-    myPerceptron.learn(trainingSet);
-    // test perceptron：测试这个感知机，检验它训练的参数是否正确
-    myPerceptron.setInput(trainingSet.get(0).getInput());
-    myPerceptron.calculate();
-    System.out.print("Input: " + Arrays.toString(trainingElement.getInput()));
-    System.out.println(" Output: " + Arrays.toString(networkOutput));
+        // create training set (logical AND function)：创建训练集（符合逻辑与函数）
+        DataSet trainingSet = new DataSet(2, 1);trainingSet.addRow(...);
+        // create perceptron neural network：创建感知机(两个入，一个出，就是最简单的单层一个神经元的神经网络)
+        NeuralNetwork myPerceptron = new Perceptron(2, 1);
+        // learn the training set：学习这个训练集，就是为了得到神经网络的参数
+        myPerceptron.learn(trainingSet);
+        // test perceptron：测试这个感知机，检验它训练的参数是否正确
+        myPerceptron.setInput(trainingSet.get(0).getInput());
+        myPerceptron.calculate();
+        System.out.print("Input: " + Arrays.toString(trainingElement.getInput()));
+        System.out.println(" Output: " + Arrays.toString(networkOutput));
 
 
     
