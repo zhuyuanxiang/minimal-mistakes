@@ -79,7 +79,7 @@ public class PopulateMessages {
 ```
 * 创建一个Hibernate的配置文件：“New→Other→Hibernate Configuration File→hibernate.cfg.xml”
 
-```html
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-configuration PUBLIC 
     "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
