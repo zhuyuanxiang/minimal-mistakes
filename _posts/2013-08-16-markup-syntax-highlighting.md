@@ -88,10 +88,10 @@ Indentation matters. Be sure the indent of the code block aligns with the first 
    readonly Object obj = getObject();
    ```
    ```nemerle
-  def x : int = 3;
-  def y : string = "foo";
-  def obj : Object = getObject();
-  ```
+   def x : int = 3;
+   def y : string = "foo";
+   def obj : Object = getObject();
+   ```
 3. Now you can do this.
 
 ### Jekyll Highlight Tag
