@@ -1,5 +1,5 @@
 ---
-title: "2019-01-25-Eclipse-Hibernate-Java项目-SQL.Server-HelloHibernate"
+title: "HelloHibernate的建议过程"
 excerpt: "使用Eclipse JavaEE和SQL Server 2000，通过Hibernate，写一个最基本的HelloHibernate的Java项目，"
 categories:
 - Coding
