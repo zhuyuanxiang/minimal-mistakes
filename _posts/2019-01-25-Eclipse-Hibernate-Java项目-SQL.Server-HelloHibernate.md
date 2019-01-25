@@ -38,9 +38,9 @@ toc_sticky: true
 * 在SQL Server的“企业管理器”中创建一个名字叫“Hibernate”的数据库。
 * 在“Hibernate”数据库中创建一个“MESSAGE”的表。
   ```SQL
-  CREATE TABLE [dbo].[MESSAGE] (
-  	[MESSAGE] [char] (10) COLLATE Chinese_PRC_CI_AS NULL 
-      ) ON [PRIMARY]
+    CREATE TABLE [dbo].[MESSAGE] (
+        [MESSAGE] [char] (10) COLLATE Chinese_PRC_CI_AS NULL 
+        ) ON [PRIMARY]
 ### 配置项目
 * 选中项目，“右键→Properties→Java Build Path→Libraries→Add Library→User Library→Hibernate 3”即可把相关类包纳入到项目中。
 * 选中项目，“右键→Properties→Java Build Path→Libraries→Add Library→User Library→jTDS”即可把相关类包纳入到项目中。
