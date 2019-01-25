@@ -1,5 +1,6 @@
 ---
 title: "HelloHibernate的创建过程"
+classes: wide
 excerpt: "使用Eclipse JavaEE和SQL Server 2000，通过Hibernate，写一个最基本的HelloHibernate的Java项目，"
 categories:
 - Coding
