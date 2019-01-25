@@ -1,5 +1,6 @@
 ---
 title: "Windows7下chm文件打不开"
+excerpt: "是因为下载的chm因为安全原因被锁定，解除锁定就可以正常打开了。"
 categories:
 - Tips
 tags:
