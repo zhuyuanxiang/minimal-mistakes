@@ -1,6 +1,7 @@
 ---
 title: "Neuroph开发过程"
 excerpt: "使用Eclipse JavaEE和Neuroph学习神经网络，编写基于Java的神经网络模型"
+classes: wide
 categories:
 - Coding
 tags:
