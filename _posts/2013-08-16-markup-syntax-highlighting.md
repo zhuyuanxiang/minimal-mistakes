@@ -82,6 +82,16 @@ Indentation matters. Be sure the indent of the code block aligns with the first 
    #=> prints 'Hi, Tom' to STDOUT.
    ```
         
+   ```csharp
+   const int x = 3;
+   const string y = "foo";
+   readonly Object obj = getObject();
+   ```
+   ```nemerle
+  def x : int = 3;
+  def y : string = "foo";
+  def obj : Object = getObject();
+  ```
 3. Now you can do this.
 
 ### Jekyll Highlight Tag
