@@ -97,7 +97,7 @@ public class PopulateMessages {
 ```
 * 创建一个Hibernate的映射文件：“New→Other→Hibernate XML Mapping File”，把多余的文件和目录移除，“Add Class→Message→Finish”就可以了。
 
-```html
+```xml
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC 
     "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
