@@ -35,6 +35,8 @@ toc_sticky: true
 * 选中项目，“右键→Properties→Java Build Path→Libraries→Add Library→User Library→neuroph-2.94”即可把相关类包纳入到项目中。
 ### 理解感知机的代码
 * 单层感知机：neuroph-samples-2.94.jar中org.neuroph.samples.PerceptronSample.class
+
+
 ```java
     public SinglePerceptronAND() {
         // create training set (logical AND function)：创建训练集（符合逻辑与函数）
