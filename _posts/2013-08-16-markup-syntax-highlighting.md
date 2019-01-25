@@ -92,6 +92,11 @@ Indentation matters. Be sure the indent of the code block aligns with the first 
    def y : string = "foo";
    def obj : Object = getObject();
    ```
+
+`Redcarpet.new("Hello World!")`{:.ruby}
+
+`<xml attrib="someVal"></xml>`{:.language-xml}
+
 3. Now you can do this.
 
 ### Jekyll Highlight Tag
