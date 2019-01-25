@@ -37,7 +37,7 @@ toc_sticky: true
   * 说明：Hibernate不仅用在Web项目中，也可以在Java项目中使用，只是安装建议参考前面的说明；
 * 在SQL Server的“企业管理器”中创建一个名字叫“Hibernate”的数据库。
 * 在“Hibernate”数据库中创建一个“MESSAGE”的表。
-```SQL
+```
 CREATE TABLE [dbo].[MESSAGE] (
     [MESSAGE] [char] (10) COLLATE Chinese_PRC_CI_AS NULL 
     ) ON [PRIMARY]
@@ -77,7 +77,7 @@ public class PopulateMessages {
 }
 ```
 * 创建一个Hibernate的配置文件：“New→Other→Hibernate Configuration File→hibernate.cfg.xml”
-```xml
+```html
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-configuration PUBLIC 
     "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
@@ -94,7 +94,7 @@ public class PopulateMessages {
 </hibernate-configuration>
 ```
 * 创建一个Hibernate的映射文件：“New→Other→Hibernate XML Mapping File”，把多余的文件和目录移除，“Add Class→Message→Finish”就可以了。
-```xml
+```html
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC 
     "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
