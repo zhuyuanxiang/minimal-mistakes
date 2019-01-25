@@ -1,7 +1,7 @@
 ---
 permalink: /about/
 title: "个人介绍"
-excerpt: "Minimal Mistakes is a flexible two-column Jekyll theme."
+excerpt: "我的个人情况介绍和履历."
 layouts_gallery:
   - url: /assets/images/mm-layout-splash.png
     image_path: /assets/images/mm-layout-splash.png
