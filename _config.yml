@@ -16,9 +16,9 @@ minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "
 
 # Site Settings
 locale                   : "zh-CN"
-title                    : "奶爸朱远翔的个人博客"
+title                    : "zYx.Tom的个人博客"
 title_separator          : "-"
-name                     : "朱远翔"
+name                     : "zYx.Tom"
 description              : "学习与生活的感悟。"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -103,7 +103,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "朱远翔"
+  name             : "zYx.Tom"
   avatar           : "/assets/images/bio-photo.png" # path of avatar image
   bio              : "专注于Java与Machine Learning！"
   location         : "中国。四川。成都"
