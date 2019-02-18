@@ -4,7 +4,7 @@ excerpt: "将书中重要的内容摘取出来，并对学习过程给予了说�
 categories:
 - Reading
 tags:
-- Python
+- 设计模式
 - 读后感
 - 总结
 last_modified_at: 2018-12-21
