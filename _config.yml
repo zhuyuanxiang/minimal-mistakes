@@ -35,7 +35,7 @@ comments:
   facebook:
     # https://developers.facebook.com/docs/plugins/comments
     appid                :
-    num_posts            : 25 (default)
+    num_posts            : # 5 (default)
     colorscheme          : # "light" (default), "dark"
   utterances:
     theme                : # "github-light" (default), "github-dark"
@@ -225,7 +225,7 @@ sass:
 
 # Outputting
 permalink: /:categories/:title/
-paginate: 25 # amount of posts to show
+paginate: 15 # amount of posts to show
 paginate_path: /page:num/
 timezone: Asia/Beijing # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
