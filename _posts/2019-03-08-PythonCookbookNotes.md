@@ -34,6 +34,7 @@ toc_sticky: true
   * itertools.compress(iter_obj, boolSequence): 将可迭代对象与布尔选择器序列进行对应, 显示布尔序列中为True的对应的可迭代对象中的元素
 * (18) 将名称映射到序列的元素中: collections.namedtuple(命名元组), 避免使用位置(索引或下标)来访问列表或元组, 而通过名称来访问元素。
 * (19) 同时对数据做转换和换算: 在函数参数中使用生成器表达式; 对于可接受key参数的, 还可以使用lambda方式。
+* (20) 将多个映射合并为单个映射: collections.ChainMap(), 使用原始的字典进行合并，原字典改变时也可以反映到合并后的字典上。
 
 
 ### 列表处理
