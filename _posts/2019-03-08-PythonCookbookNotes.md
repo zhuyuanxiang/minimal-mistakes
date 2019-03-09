@@ -34,6 +34,8 @@ toc_sticky: true
   * itertools.compress(iter_obj, boolSequence): 将可迭代对象与布尔选择器序列进行对应, 显示布尔序列中为True的对应的可迭代对象中的元素
 * (18) 将名称映射到序列的元素中: collections.namedtuple(命名元组), 避免使用位置(索引或下标)来访问列表或元组, 而通过名称来访问元素。
 * (19) 同时对数据做转换和换算: 在函数参数中使用生成器表达式; 对于可接受key参数的, 还可以使用lambda方式。
+
+
 ### 列表处理
 * (03) collections.deque: 限制队列长度, 保留最后几项, 后来的挤掉最前面的; 
 * (04) 寻找特定的 N 个元素: 
@@ -45,6 +47,8 @@ toc_sticky: true
 * (13) 对字典列表排序:  sorted(dict_list, key=itemgetter(keys)),  operator.itemgetter()创建一个可调用对象
 * (14) 对对象列表排序:  sorted(object_list, key=attrgetter(prop)), operator.attrgetter()创建一个可调用对象
 * (15) 对字典列表分组:  itertools.groupby(rows, key=itemgetter(keys))
+
+
 ### 字典处理
 * (06) 一键多值字典: collections.defaultdict(defaultValueType)
 * (07) 有序的字典: collections.OrderedDict(), 保证字典迭代时按元素添加顺序进行
