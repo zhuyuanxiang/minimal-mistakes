@@ -32,7 +32,7 @@ toc_sticky: true
 
 # C01. 统计学习方法概论
 
-* 这一章都是概念和结论，如果读者能够透过概念就明白里面实际操作的内容，那就可以快速浏览此书，否则准备纸和笔认真精读才会有收获。
+* 这一章都是概念和结论，如果读者能够透过概念就明白里面实际操作的内容，那就可以快速浏览此书，否则准备纸和笔认真精读方能收获。
 * 后面的各章内容相对独立，读者既可以连续学习，也可以仅选择自己感兴趣的内容。
 
 ## 统计学习
@@ -626,6 +626,31 @@ toc_sticky: true
     * 概率近似正确 (probably approximately correct, PAC) 来自于计算学习理论，可参考、[周志华，2018] C12, \[Mitchell, 2003] C07
     * 集成学习 (ensemble learning) 也被称为多分类器系统、基于委员会的学习等，可参考、[周志华，2018] C08
 
+# C09. EM算法及推广
+
+* 学习基础
+  * 概率论：期望
+  * 最大似然估计或极大后验估计
+  * 梯度下降
+* EM算法是对含有隐变量的概率模型进行极大似然估计或者极大后验估计的迭代算法。
+  * E步，求期望；利用数据和假设的初值，求得一个隐变量的条件概率分布的期望，即 “Q 函数”。（因为无法求得条件概率分布的具体值）
+  * M步，求极值。利用 “Q 函数” 来求极值，这个极值可以帮助拟合的概率分布更加逼近真实分布。
+  * **Q函数的定义**（理解Q函数的涵义可以更好地推广到应用中，开始不理解也没关系，可以在应用中慢慢加深）
+  * **EM算法的推导**（如果书上的无法理解，还可以参考本文中的其他文献）
+    * EM算法是收敛的，但是有可能收敛到局部最小值。
+    * EM算法可以看成利用凸函数进行概率密度逼近；
+    * 如果原概率密度函数有多个极值，初值的不同就可能逼近到不同的极值点，所以无法保证全局最优。
+  * EM算法的应用（下面的两个应用都是重点，但是无法从本书中完全理解，可以在未来的应用继续探索）
+    * **高斯混合模型**
+    * **HMM（隐Markov模型）**
+  * _EM算法的推广_（建议跳过，对了解EM算法帮助不大，只有深入理解和研究EM算法才需要）
+    * F函数的极大-极大算法
+    * 广义EM算法（GEM）
+* **学习总结**
+* EM算法的详细推导。\[Borman, 2004], 或者Determined22的[EM算法简述及简单示例（三硬币模型）](http://www.cnblogs.com/Determined22/p/5776791.html)
+* EM算法的概率分析。\[Friedman, 2001], 或者苏剑林的[梯度下降和EM算法](https://spaces.ac.cn/archives/4277)
+* EM算法的深入理解。可以参考史春奇的[Hinton和Jordan理解的EM算法](https://www.jianshu.com/p/bfa6b5947cd9)
+
 # 参考文献
 
 * \[Duda, 2003] Duda R O, Peter E Hart, etc. 李宏东等译。模式分类 \[M]. 机械工业出版社。2003.
@@ -637,6 +662,10 @@ toc_sticky: true
 * \[Mitchell, 2003] Tom M.Mitchell. 肖华军等译。机器学习 \[M]. 机械工业出版社。2003
 * \[Rabiner, 1989] Rabiner L R. A tutorial on hidden Markov models and selected applications in speech recognition \[J]. Proceedings of the IEEE, 1989, 77(2): 257-286.
 * \[周志华，2018] 周志华 机器学习 \[M]. 清华大学出版社。2018
+* \[Borman, 2004] Borman S. The expectation maximization algorithm-a short tutorial[J]. Submitted for publication, 2004, 41.
+* \[Determined22, 2017] Determined22, http://www.cnblogs.com/Determined22/p/5776791.html , 2017.
+* \[苏剑林, 2017] 苏剑林, https://spaces.ac.cn/archives/4277 , 2017.
+* \[Friedman, 2001] Friedman J, Hastie T, Tibshirani R. The elements of statistical learning[M]. New York: Springer series in statistics, 2001.
 
 # 符号说明
 
