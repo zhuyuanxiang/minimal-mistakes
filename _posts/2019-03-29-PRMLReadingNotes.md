@@ -1,6 +1,6 @@
 ---
 title: "《模式识别与机器学习》的读书笔记"
-excerpt: "PRML的经典教材，这次下定决心读完。"
+excerpt: "PRML 的经典教材，这次下定决心读完。"
 classes: wide
 categories:
 - Algorithm
@@ -10,7 +10,7 @@ tags:
 - Data Science
 - Pattern Recognition
 - Bayesina Methods
-create_at: 2019-03-29
+- PRML
 last_modified_at: 2019-04-15
 toc: true
 toc_label: "文章提纲"
@@ -20,152 +20,339 @@ toc_sticky: true
 
 # 全书总评
 
-* 书本印刷质量：4 星。PDF打印，印刷清楚，排版有点紧凑，错误较少并且不影响阅读。
+* 书本印刷质量：4 星。PDF 打印，印刷清楚，排版有点紧凑，错误较少并且不影响阅读。
 * 著作编写质量：4 星。机器学习的进阶。
   * 全书内容自洽，数学方面不算太深，具备大学工科数学功底（微积分、线性代数、概率统计）就可以阅读，如果想深入理解还需要补充随机过程、泛函分析、最优化、信息论等，如果还想更深一层还可以补充决策论、测度论、流形几何等理论；再深俺就完全不知道了。
-  * 作者以讲清楚Bayesian方法的来龙去脉为根本目的，所以全书紧紧围绕在Bayesian同志的周围，尽可能以Bayesian思想来分析各种模式识别与机器学习中的常用算法，对于已经零散地学习了许多种算法的同学大有裨益。
+  * 作者以讲清楚 Bayesian 方法的来龙去脉为根本目的，所以全书紧紧围绕在 Bayesian 同志的周围，尽可能以 Bayesian 思想来分析各种模式识别与机器学习中的常用算法，对于已经零散地学习了许多种算法的同学大有裨益。
   * 全局的结构是点到面的风格，以一个二项式拟合的例子一点点铺开，节奏稍慢但是前后连贯，知识容易迁移理解；
 * 笔记目的：记录重点，方便回忆。
 
 # C01. 绪论
 
-# 1.1. 基本知识点
+## 本章前言
 
-* 训练与训练集(training set)、通过目标向量(target vector)学习，利用测试集(test set)测试学习的结果，泛化(generalization)表示新样本的预测的能力
-* 原始输入向量需要被预处理(pre-processed)，变换到新的变量空间，也称为特征抽取(feature extraction)
-* 有监督学习(supervised learning)
-  * 离散学习称为分类(classification)问题
-  * 连续学习称为回归(regression)问题
-* 无监督学习(unsupervised learning)
-  * 离散学习称为聚类(clustering问题
-  * 连续学习称为密度估计(density estimation)
-    * 高维空间投影到二维或者三维空间，为了数据可视化(visualization)
+* 重点
+  * 多项式曲线拟合：这个例子通过不同的角度介绍机器学习，从而更好地理解贝叶斯估计的思想，也是后面反复讨论的基础。
+* 难点
+  * 贝叶斯概率论：最大似然函数、先验概率与后验概率
+  * 模型选择与分类决策：模型复杂度控制、模型质量评价和决策评价准则
+* 学习要点
+  * 期望与方差，需要补充《概率论》的知识；
+  * 参数估计，需要补充《最优化》的知识，也可以参考模式识别书中的理论部分；
+  * 模型选择与分类决策，需要补充《模式识别》与《机器学习》方面的基础知识；
+  * 本书更适合在对机器学习有了基本认识后，想进一步加深贝叶斯统计学习理解的同学研读。
+  * 机器学习的基础建议参考 \[李航， 2012] \[周志华，2018]
+
+## 1.1. 基本知识点
+
+* 训练与训练集 (training set)、通过目标向量 (target vector) 学习，利用测试集 (test set) 测试学习的结果，泛化 (generalization) 表示新样本的预测的能力
+* 原始输入向量需要被预处理 (pre-processed)，变换到新的变量空间，也称为特征抽取 (feature extraction)
+* 有监督学习 (supervised learning)
+  * 离散学习称为分类 (classification) 问题
+  * 连续学习称为回归 (regression) 问题
+* 无监督学习 (unsupervised learning)
+  * 离散学习称为聚类 (clustering 问题
+  * 连续学习称为密度估计 (density estimation)
+    * 高维空间投影到二维或者三维空间，为了数据可视化 (visualization)
 * 反馈学习（强化学习）(refinforcement learning)：本书不关注
-  
-# 1.2. 例子：多项式曲线拟合
+
+## 1.2. 例子：多项式曲线拟合
 
 * 概率论提供了数学框架，用来描述不确定性；
 * 决策论提供了合适的标准，用来进行最优的预测。
-* 多项式函数是线性模型，充分讨论在C03和C04。
-  * 最小化误差函数(error function)：常用的是平方误差函数，根均方（RMS）误差更方便
-  * 多项式的阶数的选择，称为模型对比(model comparison)或者模型选择(model selection)问题。
-  * 过于完美的拟合训练集数据可能会出现过拟合(over-fitting)问题。大量的数据可以避免过拟合问题。
-  * 训练数据的数量应该是模型可调节参数的数量的5到10倍。
-  * 最大似然(maximum likelihood，ML）
-    * 寻找模型参数的最小平方法代表了ML的一种特殊情形
-    * 过拟合问题是ML的一种通用属性
-    * Bayesian方法可以自然地解决过拟合问题
+* 多项式函数是线性模型，充分讨论在 C03 和 C04。
+  * 最小化误差函数 (error function)：常用的是平方误差函数，根均方（RMS）误差更方便
+  * 多项式的阶数的选择，称为模型对比 (model comparison) 或者模型选择 (model selection) 问题。
+  * 过于完美的拟合训练集数据可能会出现过拟合 (over-fitting) 问题。大量的数据可以避免过拟合问题。
+  * 训练数据的数量应该是模型可调节参数的数量的 5 到 10 倍。
+  * 最大似然 (maximum likelihood，ML）
+    * 寻找模型参数的最小平方法代表了 ML 的一种特殊情形
+    * 过拟合问题是 ML 的一种通用属性
+    * Bayesian 方法可以自然地解决过拟合问题
     * 控制过拟合的技术有正则化（regularization）方法，通过给误差函数增加惩罚项
       * 在统计学中叫做收缩（shrinkage）方法
-      * 在二次正则项中称为山脊回归(ridge regression)
-      * 在神经网络中称为权值衰减(weight decay)
+      * 在二次正则项中称为山脊回归 (ridge regression)
+      * 在神经网络中称为权值衰减 (weight decay)
       * 正则项对过拟合的影响可以通过λ系数来认识
-    * 控制过拟合的技术有验证集(validation set)，也被称为拿出集(hold-out set)，缺点是不能充分利用数据
+    * 控制过拟合的技术有验证集 (validation set)，也被称为拿出集 (hold-out set)，缺点是不能充分利用数据
 
-# 1.3. 概率论
+## 1.3. 概率论
 
 * （建议跟着公式和例子推导一下）
 * 离散随机变量与连续随机变量之间的关系有助于理解概率中的其他概念，例如：期望、方差、熵等等的定义和推导
 * **概率论的两个基本规则**（后面会有大量的应用，需要充分理解才能正确的使用）
-  * 加和规则(sum rule)
-  * 乘积规则(product rule)
+  * 加和规则 (sum rule)
+  * 乘积规则 (product rule)
 * 离散随机变量
-  * 概率质量函数(probability mass function)
-  * 联合概率(joint probability)
-    * 利用加和规则得到边缘概率(marginal probability)
-    * 利用乘积规则得到条件概率(conditional probability)
+  * 概率质量函数 (probability mass function)
+  * 联合概率 (joint probability)
+    * 利用加和规则得到边缘概率 (marginal probability)
+    * 利用乘积规则得到条件概率 (conditional probability)
 * 连续随机变量
-  * 概率密度函数(probability density function)
-  * 累积分布函数(cumulative distribution function)
-* 期望(expectation)：函数的平均值
+  * 概率密度函数 (probability density function)
+  * 累积分布函数 (cumulative distribution function)
+* 期望 (expectation)：函数的平均值
   * 有限数量的数据集，可以用 **求和** 的方式估计期望
   * 多变量函数的期望，需要使用下标来表明被平均的是哪个变量
-  * 条件分布的条件期望(conditional expectation)
-* 方差(variance)：度量了函数在均值附近变化性的大小。
-  * 协方差(covariance)：度量两个随机变量之间的关系
-* **Bayesian概率**
+  * 条件分布的条件期望 (conditional expectation)
+* 方差 (variance)：度量了函数在均值附近变化性的大小。
+  * 协方差 (covariance)：度量两个随机变量之间的关系
+* **Bayesian 概率**
   * 后验概率∝似然函数×先验概率
   * 似然函数
     * 频率派认为参数的值是固定的，可以通过某种形式的“估计”来确定；
-      * 广泛使用最大似然估计(maximum likelihood estimator, MLE)
+      * 广泛使用最大似然估计 (maximum likelihood estimator, MLE)
       * 函数的负对数被叫做误差函数，最大化似然函数等价于最小化误差函数
-    * Bayesian派认为参数的不确定性通过概率分布来表达。
+    * Bayesian 派认为参数的不确定性通过概率分布来表达。
       * 取样方法：MCMC（C11）
       * 判别方法：变分贝叶斯（Variational Bayes）和期望传播（Expectation Propagagtion）
-* **高斯分布**（Gaussian distribution)，也叫正态分布(normal distribution)。（各种分布的详细情况参考C02）
-  * 控制参数：均值μ和方差σ^2，标准差σ，精度(precision)β
+* **高斯分布**（Gaussian distribution)，也叫正态分布 (normal distribution)。（各种分布的详细情况参考 C02）
+  * 控制参数：均值μ和方差σ^2，标准差σ，精度 (precision)β
   * 期望就是均值μ
   * 分布的最大值叫众数，与均值恰好相等。
   * 多维向量的高斯分布：均值向量和协方差矩阵
-  * 独立地从相同的数据点中抽取的数据被称为独立同分布(independent and identically distributed, i.i.d.)
+  * 独立地从相同的数据点中抽取的数据被称为独立同分布 (independent and identically distributed, i.i.d.)
     * 在给定的数据集下最大化概率的参数得到最大似然解：样本均值和样本方差。
     * 最大似然的偏移问题是多项式曲线拟合问题中遇到的过拟合问题的核心。
     * 最大化后验概率等价于最小化正则化的平方和误差函数
 
-# 1.4. 模型选择
+## 1.4. 模型选择
 
-* 交叉验证(cross validation)和留一法(leave-one-out)可以解决验证模型时面临的数据不足问题。但是会增加训练成本。
+* 交叉验证 (cross validation) 和留一法 (leave-one-out) 可以解决验证模型时面临的数据不足问题。但是会增加训练成本。
 * 模型表现的度量的信息准则
   * 赤池信息准则（Akaike information criterion，AIC）
-  * 贝叶斯信息准则(Bayesian information criterion, BIC)
+  * 贝叶斯信息准则 (Bayesian information criterion, BIC)
 * 维度灾难
-* 在高维空间中，一个球体的大部分体积都聚焦在表面附近的薄球壳上。（可以推导公式理解）
-* 高维空间中，大部分数据都集中在薄球壳上导致数据无法有效区分，称为维度灾难(curse of dimensionality)
+  * 在高维空间中，一个球体的大部分体积都聚焦在球体表面附近的薄球壳上。（可以推导公式理解）
+  * 在高维空间中，大部分数据都集中在薄球壳上导致数据无法有效区分，称为维度灾难 (curse of dimensionality)
 * 解决方案
   * 真实的数据经常被限制在有着较低的有效维度的空间区域中；（通过特征选择降维）
   * 真实数据通常比较光滑（至少局部上比较光滑）（通过局部流形降维）
 
-# 1.5. 决策论
-  
+## 1.5. 决策论
+
 * 决策论：保证在不确定性的情况下做出最优的决策。
-  * 从训练数据集中确定输入向量x和目标向量t的联合分布是推断(inference)问题
+  * 从训练数据集中确定输入向量 x 和目标向量 t 的联合分布是推断 (inference) 问题
 * 分类问题的决策
   * 最小化错误分类率
     * 输入空间根据规则切分成不同的区域，这些区域被称为决策区域。
-    * 决策区域间的边界叫做决策边界(decision boundary)或者决策面(decision surface)。
+    * 决策区域间的边界叫做决策边界 (decision boundary) 或者决策面 (decision surface)。
   * 最小化期望损失
-    * 损失函数(loss function)也称为代价函数(cost function)
+    * 损失函数 (loss function) 也称为代价函数 (cost function)
       * 目标是最小化整体的损失。
-    * 效用函数(utility function)
+    * 效用函数 (utility function)
       * 目标是最大化整体的效用。
-  * 拒绝选项(reject option)：避免做出错误的决策，可以使模型的分类错误率降低。
+  * 拒绝选项 (reject option)：避免做出错误的决策，可以使模型的分类错误率降低。
   * 分类问题的两个阶段
-    * 推断(inference)
-    * 决策(decision)
-    * 同时解决两个阶段的问题，即把输入直接映射为决策的函数称为判别函数(discriminant function)
-  * 显式或者隐式地对输入以及输出进行建模的方法称为生成式模型(generative model)
+    * 推断 (inference)
+    * 决策 (decision)
+    * 同时解决两个阶段的问题，即把输入直接映射为决策的函数称为判别函数 (discriminant function)
+  * 显式或者隐式地对输入以及输出进行建模的方法称为生成式模型 (generative model)
   * 使用后验概率进行决策的理由
     * 最小化风险
     * 拒绝选项
     * 补偿类先验概率
-    * 组合模型（参考C14）
+    * 组合模型（参考 C14）
 * 回归问题的损失函数
   * 解决回归问题的三种方法
     * 先求联合概率密度，再求条件概率密度，最后求条件均值；
     * 先解决条件概率密度的推断问题，再求条件均值；
     * 直接从训练数据中寻找一个回归函数
-  * 平方损失函数的一种推广，闵可夫斯基损失函数(Minkowski loss)
+  * 平方损失函数的一种推广，闵可夫斯基损失函数 (Minkowski loss)
 
-# 1.6. 信息论
+## 1.6. 信息论
 
-* 无噪声编码定理(noiseless coding theorem)：熵是传输一个随机变量状态值所需要的比特位的下界。
+* 无噪声编码定理 (noiseless coding theorem)：熵是传输一个随机变量状态值所需要的比特位的下界。
   * （推导过程值得理解，没有深入讨论的部分可以跳过）
-* 离散随机变量的熵(entropy)
+* 离散随机变量的熵 (entropy)
   * 最大的熵值产生于均匀分布
 * 连续随机变量的熵（微分熵）
   * 具体化一个连续变量需要大量的比特位
   * 最大化微分熵的分布是高斯分布
   * 微分熵可以为负
-  * 在给定x的情况下，y的条件熵
-* 相对熵(relative entropy)或者KL散度(Kullback-Leibler divergence)
+  * 在给定 x 的情况下，y 的条件熵
+* 相对熵 (relative entropy) 或者 KL 散度 (Kullback-Leibler divergence)
   * （推导过程建议理解）
-  * 凸函数和严格凸函数(strictly convex function)，函数的二阶导数处处为正
-  * 凹函数和严格凹函数(strictly concave function)
-  * KL散度是两个分布之间不相似程度的度量。
-  * 最小化KL散度等价于最大化似然函数。
-  * 互信息(mutual information)：表示一个新的观测y造成的x的不确定性的减小。
-  
-# 1.7. 总结
+  * 凸函数和严格凸函数 (strictly convex function)，函数的二阶导数处处为正
+  * 凹函数和严格凹函数 (strictly concave function)
+  * KL 散度是两个分布之间不相似程度的度量。
+  * 最小化 KL 散度等价于最大化似然函数。
+  * 互信息 (mutual information)：表示一个新的观测 y 造成的 x 的不确定性的减小。
+
+## 本章小结
 
 * 本章对于后面需要的重要概念都进行了说明和推导，方便深入理解后面提及的各种算法。
-* 如果看完本章后感觉充斥着许多新的概念，那么建议搁置些书，找本更加基础的模式识别与机器学习的书，例如：李航的《统计学习方法》和周志华的《机器学习》。当然，如果你有强大的内心和坚定的信念，你还是可以坚持的。因为本书需要的知识并不是很深，并且全书内容基本自洽，因此通过后面的学习也可以将不懂的其他知识慢慢补全。
+* 如果看完本章后感觉充斥着许多新的概念，那么建议搁置些书，找本更加基础的模式识别与机器学习的书，例如：李航的《统计学习方法》和周志华的《机器学习》。
+
+# C02. 概率分布
+
+## 本章前言
+
+* 重点
+  * 密度估计
+  * 高斯分布
+* 难点
+  * 多元高斯分布
+  * 指数族分布
+  * 共轭分布
+* 学习要点
+  * 密度估计 (density estimation)：在给定有限次观测 x_1,...,x_N 的前提下，对随机变量 x 的概率分布 p(x) 建模。
+    * 参数密度估计：对控制概率分布的参数进行估计。
+      * 最大似然估计：最优化似然函数在确定参数的具体值。
+      * 顺序估计：利用充分统计量，在线进行密度估计。
+        * 充分统计量 (sufficient statistic)：最大似然估计的解只通过一个统计量就可以满足对数据的依赖，这个统计量就是充分统计量。
+      * 贝叶斯估计：引入参数的先验分布，再来计算对应后验概率分布。
+    * 非参数 (nonparametric) 密度估计：参数密度估计需要假设准备估计的概率分布是什么，如果估计错误就没办法得到正确的结果；而非参数估计则不需要进行这种假设。（深入了解参考 \[Andrew, 2004] C03, \[Duda, 2003] C04）
+      * 直方图：最基本的估计方法，但是在高维度问题中无法应用。
+      * 核密度估计：固定区域 V 的大小，统计区域内的数据点个数 K，利用平滑的核函数，从而得到光滑的概率分布模型。
+      * K 近邻估计：固定区域内的数据点个数 K，计算区域 V 的大小。不是真实的概率密度模型，因为它在整个空间的积分是发散的。
+        * 最近邻估计：默认 K 为 1 时就是最近邻规则。
+    * 学习方式
+      * 离线学习，也叫批量学习。所有数据一次性采集完成后，对所有数据进行学习。
+      * 在线学习，也叫顺序学习、自适应学习、实时学习。数据无法一次性采集得到，需要随着时间片按顺序得到，学习的结果也需要随着时间发生改变。
+  * 参数分布 (parametric distribution)：少量可调节的参数控制了整个概率分布。
+    * 先验分布 (prior)：设定的参数的先验分布，参数可以看成先验分布中假想观测的有效观测数。
+      * 共轭先验 (conjugate prior)：使得后验分布的函数形式与先验概率相同，从而使贝叶斯分析得到简化。
+        * Gamma 函数
+        * 超参数：控制着参数的概率分布。
+      * 无信息先验 (noninformative prior)：对先验分布几乎无知，需要寻找一个先验分布，尽可能对后验分布产生尽可能小的影响。
+    * 后验分布 (posterior)：加入先验分布信息的概率分布，用于贝叶斯估计需要。
+  * 指数族分布 (exponential family)：具有指定的指数形式的概率分布的集合。
+    * 二项分布与 Beta 分布共轭
+    * 多项式分布与 Dirichlet 分布共轭
+    * 高斯分布与高斯分布共轭
+      * 条件高斯：如果两组变量是联合高斯分布，那么以一组变量为条件，另一组变量同样也是高斯分布。
+      * 边缘高斯：如果两组变量是联合高斯分布，那么任何一个变量的边缘分布也是高斯分布。
+    * 混合分布 (mixture distribution) 模型：将多个基本概率分布进行线性组合形成的分布。
+      * 混合高斯 (mixture of Gaussians)：将多个高斯分布进行线性组合形成的分布。每一个高斯概率密度称为混合分布中的一个成分。
+      * 学生 t 分布：表现为无限多个同均值不同精度的高斯分布的叠加形成的无限高斯混合模型。比普通高斯分布具有更好的“鲁棒性”。
+    * 周期概率分布：用于描述具有周期性质的随机变量。
+      * von Mises 分布：也称为环形正态分布 (circular normal)。是高斯分布对于周期变量的推广。
+
+## 2.1. 二元变量
+
+* 伯努利分布 (Bernoulli distribution)，也称为二项分布 (binomial distribution)：
+* Beta 分布是 Bernoulli 分布的共轭分布。
+
+## 2.2. 多项式变量
+
+* “1-of-K”表示法：变量被表示成一个 K 维向量 x，向量中的一个元素 x_k 等于 1，剩余的元素等于 0.
+* Dirichlet 分布是多项式分布的共轭分布。
+
+## 2.3. **高斯分布**
+
+* 高斯分布，也称为正态分布。
+  * 由两个参数控制：均值μ和方差σ^2，或者精度λ=1/σ。
+* 中心极限定理 (central limit theorem)：一组随机变量之和的概率分布随着项的数量的增加而逐渐趋向高斯分布。
+* 高斯分布的局限性
+  * 多元高斯分布中自由参数的数量随着维数的平方增长。
+  * 高斯分布是单峰的，不能很好地描述多峰分布。
+* 高斯分布的贝叶斯推断
+  * 一元高斯随机变量
+    * 均值未知，方差已知，均值的先验可以选高斯分布。
+    * 均值已知，精度未知，精度的先验可以选 Gamma 分布。
+    * 均值未知，精度未知，与均值和精度相关的先验分布可以选正态 -Gamma 分布或高斯 -Gamma 分布。
+  * 多元高斯随机变量
+    * 均值未知，方差已知，均值的先验可以选高斯分布。
+    * 均值已知，精度未知，精度的先验可以选 Wishart 分布。
+    * 均值未知，精度未知，与均值和精度相关的先验分布可以选正态 -Wishart 分布或高斯 -Wishart 分布。
+* 学生 t 分布 (Student's t-distribution)
+  * 当自由度υ=1 时，t 分布就变成为柯西分布 (Cauchy distribution)；
+  * 当自由度υ→∞时，t 分布就变成为高斯分布。
+  * 学生 t 分布可以通过将无限多个同均值不同精度的高斯分布相加得到，即可以表示成无限的高斯混合模型
+  * 学生 t 分布有着比高斯分布更长的“尾巴”，因此具有很好的鲁棒性 (robustness)，对于离群点 (outlier) 的出现不像高斯分布那么敏感。
+* 周期变量
+  * von Mises 分布：也叫环形正态分布 (circular normal distribution)，是高斯分布对于周期变量的推广。
+  * 建立周期概率分布的方法
+    * 直方图：极坐标被划分成大小固定的箱子。优点是简洁并且灵活。
+    * 类似于 von Mises 分布：考察欧几里得空间的高斯分布，在单位圆上做积分，使概率分布的形式相比直方图要复杂。
+    * 在实数轴上的任何合法的分布都可以转化成周期分布。持续地把宽度为 2π的敬意映射为周期变量 (0,2π)，使概率分布的形式相比于 von Mises 分布更加复杂。
+  * 混合高斯模型
+    * 混合模型 (mixture distribution)：通过将基本的概率分布进行线性组合叠加形成概率模型。
+    * 一元混合高斯 (mixture of Gaussians)：K 个高斯概率密度的叠加形成混合高斯模型，每个高斯概率密度是混合分布的一个成分。
+      * 从贝叶斯的角度，可以把每个高斯概率密度的混合系数看成选择这个成分的先验概率，后验概率可以被称为责任。
+      * 利用最大似然法可以用于确定一元混合高斯模型中的各个参数。
+    * 多元混合高斯：参数的最大似然解不再有一个封闭形式的解析解。求解方式有以下两种方法
+      * 迭代数值优化方法
+      * 期望最大化方法
+
+## 2.4. 指数族分布
+
+* 指数族 (exponential family) 分布
+  * Bernoulli 分布：转化成指数族分布形式，归一化指数为 Logistic Sigmoid 函数；
+  * 一元多项式分布：转化成指数族分布形式，归一化指数为 Softmax 函数；
+  * 一元高斯分布：
+* **最大似然**与**充分统计量**：（方案两个概念都很重要，需要真正理解，因为后面会大量出现）
+* 共轭先验：对于给定的概率分布，寻找一个先验使其与似然函数共轭，从而后验分布的函数形式与先验分布相同。
+  * 指数族分布中的任何分布，都存在一个共轭先验。
+  * 从贝叶斯的角度，参数υ可以看成先验分布中假想观测的有效观测数。
+* 无信息先验 (noninformative prior)
+  * 尽量对后验分布产生尽可能小的影响。
+  * 当先验分布是常数时存在的问题
+    * 如果聚会的范围是无界的，那么先验分布无法被正确地归一化。这样的先验分布被称为反常的 (improper)
+    * 概率密度分布中变量的非线性变换，使得最初的先验分布经过变换后不再是常数。
+  * 先验分布的两个例子
+    * 具有平移不变性 (translation invariance) 的概率分布
+    * 具有缩放不变性 (scale invariance) 的概率分布
+
+## 2.5. 非参数化地
+
+* 概率密度建模的参数化方法
+  * 利用数据估计有参数的概率分布的形式
+  * 需要确定数据的概率分布形式，如果形式估计错误，那么估计的结果也无法正确。
+* 概率密度建模的非参数化方法
+  * 不需要确定数据的概率分布形式
+  * 密度估计的直方图方法
+    * 一旦直方图被计算出来，数据本身就可以丢弃，适合面对大数据量的情况。
+    * 直方图方法也可以应用到数据顺序到达的情况。
+  * 非参数概率密度估计的特点
+    * 需要确定距离度量，方便计算某个领域内的数据点个数；
+    * 为了更好地平衡概率密度的细节，需要注意领域的大小，类似于模型复杂度的确定。
+  * 密度估计的通用形式
+    * V 是区域 R 的体积
+    * K 是区域 R 内数据点的个数
+  * 密度估计的核密度方法
+    * 固定 V，确定 K
+    * 为了得到光滑的模型，选择一个核函数 (kernel function)，即 Paren 窗。
+    * 不需要进行训练阶段的计算
+    * 估计概率密度的计算代价随着数据集的规模线性增长。
+  * 密度估计的近邻方法
+    * 固定 K，确定 V
+    * 解决核方法中核固定的问题
+    * K 近邻法得到的模型不是真实的概率密度模型，在整个空间的积分是发散的。
+  * 基于树的搜索结构，解决概率密度估计方法需要存储整个训练数据集的问题。
+
+## 本章小结
+
+这章看起来是基础知识的介绍，实际上是对后面知识的梳理。如果这章看完有太多不理解的内容，再次建议先去补基础，否则作者不断提到通过贝叶斯角度来理解机器学习的目的就无法实现了。
+
+# 参考文献
+
+* \[Andrew, 2004] Andrew R.Webb. 统计模式识别 \[M]. 电子工业出版社。2004.
+* \[Duda, 2003] Duda R O, Peter E Hart, etc. 李宏东等译。模式分类 \[M]. 机械工业出版社。2003.
+* \[李航， 2012] 李航著，统计学习方法。 \[M]. 清华大学出版社。 2012.
+* \[周志华，2018] 周志华著 机器学习 \[M]. 清华大学出版社。2018
+
+* \[Borman, 2004] Borman S. The expectation maximization algorithm-a short tutorial \[J]. Submitted for publication, 2004, 41.
+* \[Charles, 2011] Charles Sutton and Andrew McCallum, An Introduction to Conditional Random Fields \[J]. Machine Learning 4.4 (2011): 267-373.
+* \[Determined22, 2017] Determined22, <http://www.cnblogs.com/Determined22/p/5776791.html> , 2017.
+* \[Friedman, 2001] Friedman, Jerome H. “Greedy Function Approximation: A Gradient Boosting Machine.” Annals of Statistics, vol. 29, no. 5, 2001, pp. 1189–1232.
+* \[Friedman, 2001] Friedman J, Hastie T, Tibshirani R. The elements of statistical learning \[M]. New York: Springer series in statistics, 2001.
+* \[Goodfellow, 2017] Goodfellow I, Bengio Y, Courville A. 深度学习 \[M]. 人民邮电出版社。2017.
+* \[Hagan, 2006] Martin T. Hagan. 戴葵等译。神经网络设计 \[M]. 2002.
+* \[Haykin, 2011] Haykin S . 神经网络与机器学习 \[M]. 机械工业出版社。2011.
+* \[Hyvarinen, 2007] Aapo Hyvarinen, Juha Karhunen. 周宗潭译 独立成分分析 \[M]. 电子工业出版社。2007.
+* \[Mitchell, 2003] Tom M.Mitchell. 肖华军等译。机器学习 \[M]. 机械工业出版社。2003
+* \[Rabiner, 1989] Rabiner L R. A tutorial on hidden Markov models and selected applications in speech recognition \[J]. Proceedings of the IEEE, 1989, 77(2): 257-286.
+* \[Samuel, 2007] Samuel Karlin M.Taylor 著，庄兴无等译。 随机过程初级教程。 \[M]. 人民邮电出版社， 2007.
+* \[Sutton, 2012] Sutton, Charles, and Andrew McCallum. "An introduction to conditional random fields." Foundations and Trends® in Machine Learning 4.4 (2012): 267-373.
+* \[苏剑林，2017] 苏剑林，<https://spaces.ac.cn/archives/4277> , 2017.
+* \[盛骤，2015] 盛骤等编，概率论与数理统计（第四版）。 \[M]. 高等教育出版社。 2015.
+* \[宗成庆，2018] 宗成庆著，统计自然语言处理（第二版）。 \[M]. 清华大学出版社。 2018.
+
+# 符号说明
+
+* Pxx，代表第 xx 页；
+* Cxx，代表第 xx 章；
+* \[M]，代表图书；
+* \[J]，代表杂志；
