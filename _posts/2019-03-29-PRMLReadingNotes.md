@@ -295,7 +295,7 @@ toc_sticky: true
     * 具有平移不变性 (translation invariance) 的概率分布
     * 具有缩放不变性 (scale invariance) 的概率分布
 
-## 2.5. 非参数化地
+## 2.5. 非参数化密度估计
 
 * 概率密度建模的参数化方法
   * 利用数据估计有参数的概率分布的形式
