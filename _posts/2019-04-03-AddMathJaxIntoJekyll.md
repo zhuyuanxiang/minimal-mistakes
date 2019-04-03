@@ -28,7 +28,7 @@ toc_sticky: true
     ```
 
 5. 接下来就可以在Markdown中使用MathJax了。
-   1. 使用 "\$\$公式\$\$" 表示行间公式
+   1. 使用 "\$\$\公式\$\$" 表示行间公式
 
         $$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
 
@@ -36,7 +36,7 @@ toc_sticky: true
         $$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
         ```
 
-   2. 使用"\$公式\$" 或者 "//(公式//)"表示行内公式
+   2. 使用"\$\公式\$" 或者 "//(公式//)"表示行内公式
 
         假设//(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}//)，则$\cdots$
 
@@ -50,15 +50,15 @@ toc_sticky: true
 
    4. 靠左格式:
 
-        \\(xxx\\)
+        //(xxx//)
 
         $x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$
 
-        \\(l(x_i) = - \log_2 P(x_i)\\)
+        //(l(x_i) = - \log_2 P(x_i)//)
 
    5. 测试
 
-        When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
+        When $a \ne 0$, there are two solutions to //(ax^2 + bx + c = 0//) and they are
         $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
 
    6. The Lorenz Equations
@@ -89,7 +89,7 @@ toc_sticky: true
         \end{vmatrix}
         $$
 
-   9. The probability of getting \\(k\\) heads when flipping \\(n\\) coins is:
+   9. The probability of getting //(k//) heads when flipping //(n//) coins is:
 
         $$P(E) = {n \choose k} p^k (1-p)^{ n-k} $$
 
@@ -124,6 +124,6 @@ toc_sticky: true
 
         Finally, while display equations look good for a page of samples, the
         ability to mix math and text in a paragraph is also important.  This
-        expression \\(\sqrt{3x-1}+(1+x)^2\\) is an example of an inline equation.  As
+        expression //(\sqrt{3x-1}+(1+x)^2//) is an example of an inline equation.  As
         you see, MathJax equations can be used this way as well, without unduly
         disturbing the spacing between lines.
