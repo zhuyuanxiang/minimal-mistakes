@@ -28,15 +28,15 @@ toc_sticky: true
     ```
 
 5. 接下来就可以在Markdown中使用MathJax了。
-   1. 使用 "\$\$\公式\$\$" 表示行间公式
-
-        $$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
+   1. 使用 "\$ \$ \$ 公式 \$ \$ \$" 表示行间公式
 
         ```tex
         $$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
         ```
 
-   2. 使用"\$\公式\$" 或者 "//(公式//)"表示行内公式
+        $$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
+
+   2. 使用"\$ 公式 \$" 或者 "\/\/(公式\/\/)"表示行内公式
 
         假设//(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}//)，则$\cdots$
 
@@ -49,10 +49,22 @@ toc_sticky: true
         $$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
 
    4. 靠左格式:
+        
+        ```tex
+        //(xxx//)  
+        ```
 
-        //(xxx//)
+        //(xxx//)  
+
+        ```tex
+        $x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$
+        ```
 
         $x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$
+
+        ```tex
+        //(l(x_i) = - \log_2 P(x_i)//)
+        ```
 
         //(l(x_i) = - \log_2 P(x_i)//)
 
