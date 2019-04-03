@@ -36,13 +36,15 @@ toc_sticky: true
         $$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
         ```
 
-   2. 使用"//(公式//)"表示行内公式
+   2. 使用"\$公式\$" 或者 "//(公式//)"表示行内公式
 
-        假设//(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}//)，则//(\cdots//)
+        假设//(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}//)，则$\cdots$
 
    3. 居中格式:
 
         $$xxx$$
+
+        $$\frac{7x+5}{1+y^2}$$
 
         $$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
 
@@ -50,7 +52,9 @@ toc_sticky: true
 
         \\(xxx\\)
 
-        \\(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\\)
+        $x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$
+
+        \\(l(x_i) = - \log_2 P(x_i)\\)
 
    5. 测试
 
