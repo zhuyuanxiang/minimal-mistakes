@@ -6,7 +6,7 @@ categories:
 - Markdown
 tags:
 - MathJax
-last_modified_at: 2019-04-01
+last_modified_at: 2019-04-03
 toc: true
 toc_label: "文章提纲"
 toc_icon: "book-reader"
@@ -20,7 +20,7 @@ toc_sticky: true
 
     ```html
     <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({tex2jax: {inlineMath: [['$$','$$'], ['{{','}}']]}});
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$$','$$'], ['\\(','\\)']]}});
     </script>
     <script type="text/javascript"
         src="/assets/js/MathJax/MathJax.js?config=TeX-AMS_HTML-full">
@@ -28,24 +28,31 @@ toc_sticky: true
     ```
 
 5. 接下来就可以在Markdown中使用MathJax了。
-   1. 使用\$\$公式\$\$表示行间公式
+   1. 使用 "$$公式$$" 表示行间公式
+
         $$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
-   2. 使用{{公式}}表示行内公式
-        假设{{x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}}}，则{{\cdots}}
+
+   2. 使用\\(公式\\)表示行内公式
+
+        假设\\(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\\)，则\\(\cdots\\)
+
    3. 居中格式:
+
         $$xxx$$
+
         $$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
+
    4. 靠左格式:
 
-        {{xxx}}
+        \\(xxx\\)
 
-        {{x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}}}
+        \\(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\\)
 
    5. 测试
 
         $$\frac{7x+5}{1+y^2}$$
 
-        {{l(x_i) = - \log_2 P(x_i)}}
+        \\(l(x_i) = - \log_2 P(x_i)\\)
    6. The Lorenz Equations
         $$
         \begin{align}
