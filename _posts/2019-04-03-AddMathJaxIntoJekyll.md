@@ -55,6 +55,7 @@ toc_sticky: true
         \\(l(x_i) = - \log_2 P(x_i)\\)
 
    6. The Lorenz Equations
+
         $$
         \begin{align}
         \dot{x} & = \sigma(y-x) \\
