@@ -20,7 +20,7 @@ toc_sticky: true
 
     ```html
     <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({tex2jax: {inlineMath: [['$$','$$'], ['\\(','\\)']]}});
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$$','$$'], ['//(','//)']]}});
     </script>
     <script type="text/javascript"
         src="/assets/js/MathJax/MathJax.js?config=TeX-AMS_HTML-full">
@@ -28,13 +28,17 @@ toc_sticky: true
     ```
 
 5. 接下来就可以在Markdown中使用MathJax了。
-   1. 使用 "$$公式$$" 表示行间公式
+   1. 使用 "\$\$公式\$\$" 表示行间公式
 
         $$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
 
-   2. 使用\\(公式\\)表示行内公式
+        ```tex
+        $$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
+        ```
 
-        假设\\(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\\)，则\\(\cdots\\)
+   2. 使用"//(公式//)"表示行内公式
+
+        假设//(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}//)，则//(\cdots//)
 
    3. 居中格式:
 
