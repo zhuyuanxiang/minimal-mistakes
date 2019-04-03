@@ -54,9 +54,8 @@ toc_sticky: true
 
    5. 测试
 
-        $$\frac{7x+5}{1+y^2}$$
-
-        \\(l(x_i) = - \log_2 P(x_i)\\)
+        When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
+        $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
 
    6. The Lorenz Equations
 
