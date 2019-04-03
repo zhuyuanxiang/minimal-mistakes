@@ -16,14 +16,14 @@ toc_sticky: true
 使用MathJax引擎
 大家都看过Stackoverflow上的公式吧，漂亮，其生成的不是图片。这就要用到MathJax引擎，在Markdown中添加MathJax引擎也很简单
 
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 然后，再使用Tex写公式。$$公式$$表示行间公式，本来Tex中使用\(公式\)表示行内公式，但因为Markdown中\是转义字符，所以在Markdown中输入行内公式使用\\(公式\\)，如下代码：
 
 $$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
+
 \\(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\\)
 
 # 机器学习-如何在github上写数学公式
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
 居中格式: $$xxx$$
 $$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
 靠左格式: \\(xxx\\)
@@ -32,6 +32,7 @@ $$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
 $$\frac{7x+5}{1+y^2}$$
 \\(l(x_i) = - \log_2 P(x_i)\\)
 
+# Others
 分数，平方
 
  7x +5 1+y 2     	\frac{7x+5}{1+y^2}
@@ -110,7 +111,7 @@ d  d x   e ax  =ae ax   ∑ i=1 n (X  i −X  ⎯ ⎯ ⎯  ) 2
  ≠  	\neq
  ≤  	\leq
  ≥  	\geq
- 
+
 参考地址：
 
 使用介绍：http://blog.csdn.net/xiahouzuoxin/article/details/26478179
