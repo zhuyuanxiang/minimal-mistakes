@@ -63,9 +63,14 @@ toc_sticky: true
 | ？？问题   | 一般线性模型      | $f(\underset{i}{\sum} w^ \phi(x))$  | \[Bishop, 2007](P139,E4.52) |                                        |
 | ？？问题   | 泊松回归模型      |                                     |                             |                                        |
 
-* 简单线性模型(Simple Linear Model)，也叫简单线性回归模型(Simple Regression Model)，是其他线性模型的基础。输入变量x是标量，输出变量y也是标量。 $$y = wx + b$$
-  * 多元线性回归模型(Multiple Linear Regression, Multivariable Linear Regression)。输入变量x是向量，输出变量y是标量。$$y=\underset{i}{\sum}w_i x_i + b $$
-* 一般线性模型，
+* 简单线性模型(Simple Linear Model)，也叫简单线性回归模型(Simple Regression Model)，是其他线性模型的基础。输入变量$x$是标量，输出变量$y$也是标量，即一个自变量与一个因变量之间的关系。 
+  $$y = wx + b$$
+  * 一元多重线性回归模型(Multiple Linear Regression)。输入变量$\mathbf{x}$是向量，输出变量$y$是标量，即多个自变量与一个因变量之间的关系。
+  $$y=\underset{i}{\sum}w_i x_i + b $$
+* 一般线性模型，也叫多元线性回归模型(Multivariate Linear Regression)。。输入变量$\mathbf{x}$是向量，输出变量$\mathbf{y}$也是向量，即多个自变量与多个因变量之间的关系。
+  $$y_i=w_i x_i + b_i$$
+  * 多元多重线性回归模型(Multivariate Multiple Linear Regression)
+  $$\mathbf{Y}=\mathbf{WX}+B$$
 * 广义线性模型
 
 ### 非线性模型
