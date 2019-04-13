@@ -65,6 +65,7 @@ toc_sticky: true
 
 * 线性回归模型：以下四个模型都是输入变量的线性函数。其中多元多重线性回归模型是最复杂的，可以通过将部分参数设置为 0（稀疏化），从而简化为其他线性回归模型。
   * 简单线性模型 (Simple Linear Model)，也叫简单线性回归模型 (Simple Regression Model)，是其他线性模型的基础。输入变量 $x$ 是标量，输出变量 $y$ 也是标量，即一个自变量与一个因变量之间的关系。
+
     $$y(x) = wx + b$$
   * 一元多重线性回归模型 (Multiple Linear Regression)。输入变量 $\mathbf{x}$ 是向量，输出变量 $y$ 是标量，即多个自变量与一个因变量之间的关系。
     $$y(\mathbf{x})=\underset{i}{\sum}w_i x_i + b $$
