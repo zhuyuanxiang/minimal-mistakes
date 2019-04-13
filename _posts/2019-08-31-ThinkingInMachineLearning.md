@@ -50,40 +50,47 @@ toc_sticky: true
 
 ## 选择模型
 
+| 问题名称   | 模型名称          | 模型公式                                                                                                          |
+|------------|-------------------|-------------------------------------------------------------------------------------------------------------------|
+| 回归问题   | 简单线性模型      | $y(x) = wx + b$                                                                                                   |
+| 回归问题   | 一般线性模型      | $f(\underset{i}{\sum} w \phi(x))$                                                                                 |
+| 回归问题   | 线性基函数模型    | $\underset{i}{\sum} w_i \phi_i(x)$                                                                                |
+| 分类与回归 | 广义线性模型      | $y(\mathbf{x})=f(\underset{i}{\sum} w_i x_i + b)$                                                                 |
+| 分类问题   | 泊松回归模型      |                                                                                                                   |
+| 分类问题   | Logistic 回归模型 |                                                                                                                   |
+| 分类问题   | 感知器模型        | $y(\mathbf{x})=f(\underset{i}{\sum} w_i x_i + b)$                                                                 |
+| 分类与回归 | 神经网络模型      | $y_k(\mathbf{x,w})=f(\underset{j}{\sum}w_{kj}^{(2)}h(\underset{i}{\sum} w_{ji}^{(1)} x_i + b_j^{(1)})+b_k^{(2)})$ |
+
 ### 线性模型
 
-| 问题名称   | 模型名称          | 模型公式                                          | 参考文献                    | 模型说明                               |
-|------------|-------------------|---------------------------------------------------|-----------------------------|----------------------------------------|
-| 回归问题   | 简单线性模型      | $y(x) = wx + b$                                   | \[Bishop, 2007](P101,E3.1)  |                                        |
-| 回归问题   | 一般线性模型      | $f(\underset{i}{\sum} w \phi(x))$                | \[Bishop, 2007](P139,E4.52) |                                        |
-| 回归问题   | 线性基函数模型    | $\underset{i}{\sum} w_i \phi_i(x)$                | \[Bishop, 2007](P101,E3.2)  | 非线性变换输入变量到线性可分的特征空间 |
-| 分类与回归 | 广义线性模型      | $y(\mathbf{x})=f(\underset{i}{\sum} w_i x_i + b)$ | \[Bishop, 2007](P130,E4.3)  |                                        |
-| 分类问题   | 泊松回归模型      |                                                   |                             |                                        |
-| 分类问题   | Logistic 回归模型 |                                                   |                             |                                        |
-| 分类问题   | 感知器模型        | $y(\mathbf{x})=f(\underset{i}{\sum} w_i x_i + b)$ |                             |                                        |
-| 分类与回归 | 神经网络模型      | $y_k(\mathbf{x,w})=f(\underset{j}{\sum}w_{kj}^{(2)}h(\underset{i}{\sum} w_{ji}^{(1)} x_i + b_j^{(1)})+b_k^{(2)})$               | \[Bishop, 2007](P130,E4.52) |                                        |
-
 * 线性回归模型：以下四个模型都是输入变量的线性函数。其中多元多重线性回归模型是最复杂的，可以通过将部分参数设置为 0（稀疏化），从而简化为其他线性回归模型。
-  * 简单线性模型 (Simple Linear Model)，也叫简单线性回归模型 (Simple Regression Model)，是其他线性模型的基础。输入变量 $x$ 是标量，输出变量 $y$ 也是标量，即一个自变量与一个因变量之间的关系。
+  * 简单线性模型 (Simple Linear Model)，也叫简单线性回归模型 (Simple Regression Model)，是其他线性模型的基础。输入变量 $x$ 是标量，输出变量 $y$ 也是标量，即一个自变量与一个因变量之间的关系。\[Bishop, 2007](P101,E3.1)
 
     $$y(x) = wx + b$$
   * 一元多重线性回归模型 (Multiple Linear Regression)。输入变量 $\mathbf{x}$ 是向量，输出变量 $y$ 是标量，即多个自变量与一个因变量之间的关系。
+
     $$y(\mathbf{x})=\underset{i}{\sum}w_i x_i + b $$
-  * 一般线性模型，也叫多元线性回归模型 (Multivariate Linear Regression)。输入变量 $\mathbf{x}$ 是向量，输出变量 $\mathbf{y}$ 也是向量，即多个自变量与多个因变量之间的关系。
+  * 一般线性模型，也叫多元线性回归模型 (Multivariate Linear Regression)。输入变量 $\mathbf{x}$ 是向量，输出变量 $\mathbf{y}$ 也是向量，即多个自变量与多个因变量之间的关系。\[Bishop, 2007](P139,E4.52)
+
     $$y_i(\mathbf{x})=\underset{j}{\sum}w_{j} x_{ij} + b_i$$
   * 多元多重线性回归模型 (Multivariate Multiple Linear Regression)。输入变量 $\mathbf{x}$ 是向量，输出变量 $\mathbf{y}$ 也是向量，即多个自变量与多个因变量之间的关系。
+
     $$y_{ij}(\mathbf{x}_{i})=\underset{k}{\sum}w_{kj}x_{ik}+b_{ij}$$
-* 线性基函数模型：参数的线性函数。
+* 线性基函数模型：参数的线性函数。非线性变换输入变量到线性可分的特征空间\[Bishop, 2007](P101,E3.2) 
+
   $$y(\mathbf{x,w})=\underset{i}{\sum}w_i \phi_i(\mathbf{x})+b$$
-* 广义线性模型：是一种线性模型框架。可以通过不同的函数 f （链接函数），从而将多个类型的线性模型利用统一的框架表述出来。
+* 广义线性模型：是一种线性模型框架。可以通过不同的函数 f （链接函数），从而将多个类型的线性模型利用统一的框架表述出来。\[Bishop, 2007](P130,E4.3) 
+
     $$y(\mathbf{x})=f(\underset{i}{\sum} w_i \phi(x_i) + b)$$
   * 泊松回归（Poisson regression）：用于描述计数（count data）数据。
   * 逻辑回归（Logistic regression）和概率回归（ probit regression）：用于描述二元数据。
   * 多项式逻辑回归（Multinomial logistic regression） and 多项式概率回归（multinomial probit regression）：用于描述分类数据。
   * 序列逻辑（Ordered logit）和序列概率回归（ ordered probit regression）：用于描述序列数据。
 * 感知器模型：
+
   $$y(\mathbf{x})=f(\underset{i}{\sum} w_i x_i + b)$$
-  * 神经网络模型：
+  * 神经网络模型：\[Bishop, 2007](P130,E4.52)
+
   $$y_k(\mathbf{x,w})=f(\underset{j}{\sum}w_{kj}^{(2)}h(\underset{i}{\sum} w_{ji}^{(1)} x_i + b_j^{(1)})+b_k^{(2)})$$
 
 ### 非线性模型
