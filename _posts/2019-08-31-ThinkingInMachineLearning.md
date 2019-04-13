@@ -1,12 +1,16 @@
 ---
 title: "自学机器学习的思路整理"
 excerpt: "机器学习是一门跨了多门学科的科学，于是学习过程中大量的多学科的知识导致越学越茫然。好像学了许多，但是又好像什么都不会。虽然每个人的能力只是做好一个螺丝钉，但是就连做一个什么样的螺丝钉心里都没有底。这个问题一直困扰着我，于是想通过下文的整理使自己不要迷失在细节中。"
+classes: wide
 categories:
-- Coding
+- Algorithm
 tags:
-- VSCode
-- PlugIns
-- Program
+- Machine Learning
+- Statistics Learning
+- Data Science
+- Pattern Recognition
+- Bayesina Methods
+- Linear Models
 create_at: 2019-03-10
 last_modified_at: 2019-03-10
 toc: true
@@ -84,7 +88,7 @@ toc_sticky: true
     $$y(\mathbf{x})=f(\underset{i}{\sum} w_i \phi(x_i) + b)$$
   * 泊松回归（Poisson regression）：用于描述计数（count data）数据。
   * 逻辑回归（Logistic regression）和概率回归（ probit regression）：用于描述二元数据。
-  * 多项式逻辑回归（Multinomial logistic regression） and 多项式概率回归（multinomial probit regression）：用于描述分类数据。
+  * 多项式逻辑回归（Multinomial logistic regression） and 多项式概率回归（Multinomial probit regression）：用于描述分类数据。
   * 序列逻辑（Ordered logit）和序列概率回归（ ordered probit regression）：用于描述序列数据。
 * 感知器模型：
 
