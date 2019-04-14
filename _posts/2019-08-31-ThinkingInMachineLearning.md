@@ -84,19 +84,19 @@ toc_sticky: true
       $$\mathbf{y}_{k}[n]=\underset{i}{\sum}w_{ki}x_{i}[n]+b_{k}=\mathbf{w}_{k}^T\mathbf{x}+b_{k}$$
 * 线性基函数模型：参数的线性函数。非线性变换输入变量到线性可分的特征空间\[Bishop, 2007](P101,E3.2) 
 
-  $$y[n]=\underset{i}{\sum}w_i \phi_i(\underset{j}{\sum}\beta_jx_j[n]+\alpha)+b=\mathbf{w}_k\mathbf{\Phi}(\mathbf{\Beta}^T\mathbf{x}+\alpha)+b$$
+  $$y[n]=\underset{i}{\sum}w_i \phi_i(\underset{j}{\sum}\beta_jx_j[n]+\alpha)+b=\mathbf{w}_k\mathbf{\Phi}(\mathbf{\beta}^T\mathbf{x}+\alpha)+b$$
   $$
   \begin{equation}
     \begin{split}
-      (a+b)^4 &= (a+b)^2 (a+b)^2 
-              &= (a^2+2ab+b^2)(a^2+2ab+b^2)
-              &= a^4+4a^3b+6a^2b^2+4ab^3+b^4
+      (a+b)^4 &= (a+b)^2 (a+b)^2  \\
+              &= (a^2+2ab+b^2)(a^2+2ab+b^2) \\
+              &= a^4+4a^3b+6a^2b^2+4ab^3+b^4  \\
     \end{split}
   \end{equation}
 $$
 * 广义线性模型：是一种线性模型框架。可以通过不同的函数 f （链接函数），从而将多个类型的线性模型利用统一的框架表述出来。\[Bishop, 2007](P130,E4.3) 
 
-    $$y(\mathbf{x})=f(\underset{i}{\sum} w_i \phi(x_i) + b)$$
+    $$y(\mathbf{x})=f(\underset{i}{\sum} w_i x_i + b)=f(\mathbf{w}^T\mathbf{x}+b)$$
   * 泊松回归（Poisson regression）：用于描述计数（count data）数据。
   * 逻辑回归（Logistic regression）和概率回归（ probit regression）：用于描述二元数据。
   * 多项式逻辑回归（Multinomial logistic regression） and 多项式概率回归（Multinomial probit regression）：用于描述分类数据。
