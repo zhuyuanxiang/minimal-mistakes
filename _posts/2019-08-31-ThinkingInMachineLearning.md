@@ -52,7 +52,7 @@ toc_sticky: true
 
 * 有监督学习与无监督学习的扩展，建议入门期间可以跳过。
 
-## 选择模型
+## 选择模型(模型公式依然不对，需要修改。2019-04-12.zYx.Tom)
 
 | 问题名称   | 模型名称          | 模型公式                                                                                                          |
 |------------|-------------------|-------------------------------------------------------------------------------------------------------------------|
@@ -68,21 +68,32 @@ toc_sticky: true
 ### 线性模型
 
 * 线性回归模型：以下四个模型都是输入变量的线性函数。其中多元多重线性回归模型是最复杂的，可以通过将部分参数设置为 0（稀疏化），从而简化为其他线性回归模型。
-  * 简单线性模型 (Simple Linear Model)，也叫简单线性回归模型 (Simple Regression Model)，是其他线性模型的基础。输入变量 $x$ 是标量，输出变量 $y$ 也是标量，即一个自变量与一个因变量之间的关系。\[Bishop, 2007](P101,E3.1)
+  * 一元线性回归模型
+    * 一个自变量与一个因变量，叫简单线性模型 (Simple Linear Model)，或简单线性回归模型 (Simple Regression Model)，或一元线性回归模型，或一元一阶线性回归模型，是其他线性模型的基础。输入变量 $x$ 是标量，输出变量 $y$ 也是标量。\[Bishop, 2007](P101,E3.1)
 
-    $$y(x) = wx + b$$
-  * 一元多重线性回归模型 (Multiple Linear Regression)。输入变量 $\mathbf{x}$ 是向量，输出变量 $y$ 是标量，即多个自变量与一个因变量之间的关系。
+      $$y[n] = wx[n] + b$$
+    * 一个自变量与多个因变量。输入变量 $x$ 是标量，输出变量 $\mathbf{y}$ 是向量。这是个欠定模型，没有固定解，欠定线性模型基本没有研究意义，欠定非线性模型则通过非线性函数空间来表达数据的先验知识，使低维数据分解成有意义的高维数据，感兴趣的可以参考欠定的盲源分离。
 
-    $$y(\mathbf{x})=\underset{i}{\sum}w_i x_i + b $$
-  * 一般线性模型，也叫多元线性回归模型 (Multivariate Linear Regression)。输入变量 $\mathbf{x}$ 是向量，输出变量 $\mathbf{y}$ 也是向量，即多个自变量与多个因变量之间的关系。\[Bishop, 2007](P139,E4.52)
+      $$y_k[n]=w_{k} x[n] + b_k$$
+  * 多元线性回归模型
+    * 多个自变量与一个因变量，叫一般线性模型，或多元线性回归模型 (Multivariate Linear Regression)，或多重线性回归模型(Multiple Linear Regression)，是一元线性模型的泛化。输入变量 $\mathbf{x}$ 是向量，输出变量 $y$ 是标量。\[Bishop, 2007](P139,E4.52)
 
-    $$y_i(\mathbf{x})=\underset{j}{\sum}w_{j} x_{ij} + b_i$$
-  * 多元多重线性回归模型 (Multivariate Multiple Linear Regression)。输入变量 $\mathbf{x}$ 是向量，输出变量 $\mathbf{y}$ 也是向量，即多个自变量与多个因变量之间的关系。
+      $$y[n]=\underset{i}{\sum}w_i x_i[n] + b=\mathbf{w}^T\mathbf{x} + b$$
+    * 多个自变量与多个因变量，也叫多元多重线性回归模型 (Multivariate Multiple Linear Regression)，也可以看作多元线性回归模型的泛化。输入变量 $\mathbf{x}$ 是向量，输出变量 $\mathbf{y}$ 也是向量。
 
-    $$y_{ij}(\mathbf{x}_{i})=\underset{k}{\sum}w_{kj}x_{ik}+b_{ij}$$
+      $$\mathbf{y}_{k}[n]=\underset{i}{\sum}w_{ki}x_{i}[n]+b_{k}=\mathbf{w}_{k}^T\mathbf{x}+b_{k}$$
 * 线性基函数模型：参数的线性函数。非线性变换输入变量到线性可分的特征空间\[Bishop, 2007](P101,E3.2) 
 
-  $$y(\mathbf{x,w})=\underset{i}{\sum}w_i \phi_i(\mathbf{x})+b$$
+  $$y[n]=\underset{i}{\sum}w_i \phi_i(\underset{j}{\sum}\beta_jx_j[n]+\alpha)+b=\mathbf{w}_k\mathbf{\Phi}(\mathbf{\Beta}^T\mathbf{x}+\alpha)+b$$
+  $$
+  \begin{equation}
+    \begin{split}
+      (a+b)^4 &= (a+b)^2 (a+b)^2 
+              &= (a^2+2ab+b^2)(a^2+2ab+b^2)
+              &= a^4+4a^3b+6a^2b^2+4ab^3+b^4
+    \end{split}
+  \end{equation}
+$$
 * 广义线性模型：是一种线性模型框架。可以通过不同的函数 f （链接函数），从而将多个类型的线性模型利用统一的框架表述出来。\[Bishop, 2007](P130,E4.3) 
 
     $$y(\mathbf{x})=f(\underset{i}{\sum} w_i \phi(x_i) + b)$$
