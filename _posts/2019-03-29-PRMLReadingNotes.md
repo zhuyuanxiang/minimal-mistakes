@@ -1307,7 +1307,7 @@ toc_sticky: true
   * 算法过程
     1. 初始化阶段：设置 $\boldsymbol{\nu}_k$ 的初值
     2. 第一阶段：关于 $r_{nk}$ 最小化 $J$，保持 $\boldsymbol{\nu}_k$ 固定。（相当于 EM 算法中的期望 E 步骤）
-    3. 第二阶段：关于 $\boldsymbol{\nu}_k$ 最小化 $J$ ，保持 $r_{nk}$ 固定。（相当于 EM 算法中的最大化 M 步骤）
+    3. 第二阶段：关于 $\boldsymbol{\nu}_{k}$ 最小化 $J$ ，保持 $r_{nk}$ 固定。（相当于 EM 算法中的最大化 M 步骤）
 * $K$ 均值算法的推广：K 中心点算法
   * 引入更加一般的不相似程度的度量 $\mathcal{V}(\mathbf{x},\mathbf{x}')$
   * 最小化下面的失真度量 $\tilde{J}=\overset{N}{\underset{n=1}{\sum}}\overset{K}{\underset{k=1}{\sum}}r_{nk}\mathcal{V}(\mathbf{x}_n,\boldsymbol{\nu}_k)$
