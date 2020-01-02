@@ -75,22 +75,31 @@ toc_sticky: true
 
    6. The Lorenz Equations
 
-        $$
-        \begin{align}
-        \dot{x} & = \sigma(y-x) \\
-        \dot{y} & = \rho x - y - xz \\
-        \dot{z} & = -\beta z + xy
-        \end{align}
-        $$
+     $$
+     \begin{align}
+     \dot{x} & = \sigma(y-x) \\
+     \dot{y} & = \rho x - y - xz \\
+     \dot{z} & = -\beta z + xy
+     \end{align}
+     $$
 
-   7. The Cauchy-Schwarz Inequality
+     $$
+     \begin{equation}
+     \begin{split}
+          (a+b)^4 &= (a+b)^2 (a+b)^2  \\
+               &= (a^2+2ab+b^2)(a^2+2ab+b^2) \\
+               &= a^4+4a^3b+6a^2b^2+4ab^3+b^4  \\
+     \end{split}
+     \end{equation}
+     $$
+   1. The Cauchy-Schwarz Inequality
 
         $$
         \left( \sum_{k=1}^n a_k b_k \right)^{\!\!2} \leq
         \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
         $$
 
-   8. A Cross Product Formula
+   2. A Cross Product Formula
 
         $$
         \mathbf{V}_1 \times \mathbf{V}_2 =
@@ -101,11 +110,11 @@ toc_sticky: true
         \end{vmatrix}
         $$
 
-   9. The probability of getting //(k//) heads when flipping //(n//) coins is:
+   3. The probability of getting //(k//) heads when flipping //(n//) coins is:
 
         $$P(E) = {n \choose k} p^k (1-p)^{ n-k} $$
 
-   10. An Identity of Ramanujan
+   4.  An Identity of Ramanujan
 
         $$
         \frac{1}{(\sqrt{\phi \sqrt{5}}-\phi) e^{\frac25 \pi}} =
@@ -113,7 +122,7 @@ toc_sticky: true
             {1+\frac{e^{-8\pi}} {1+\ldots} } } }
         $$
 
-   11. A Rogers-Ramanujan Identity
+   5.  A Rogers-Ramanujan Identity
 
         $$
         1 +  \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots =
@@ -121,7 +130,7 @@ toc_sticky: true
             \quad\quad \text{for $|q|<1$}.
         $$
 
-   12. Maxwell's Equations
+   6.  Maxwell's Equations
 
         $$
         \begin{align}
@@ -132,7 +141,7 @@ toc_sticky: true
         \end{align}
         $$
 
-   13. In-line Mathematics
+   7.  In-line Mathematics
 
         Finally, while display equations look good for a page of samples, the
         ability to mix math and text in a paragraph is also important.  This
