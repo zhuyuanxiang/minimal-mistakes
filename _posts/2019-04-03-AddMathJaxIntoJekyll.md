@@ -3,6 +3,7 @@ title: "为 minimal-mistakes-jekyll 加入 MathJax 的支持"
 excerpt: "因为 GitHub 的 Markdown 不支持数学公式，只好借助于 MathJax 来实现。"
 classes: wide
 categories:
+mathjax: true
 - Markdown
 tags:
 - MathJax
