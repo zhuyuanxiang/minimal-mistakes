@@ -3,7 +3,6 @@ title: "《模式识别与机器学习》的读书笔记"
 excerpt: "PRML 的经典教材，这次下定决心读完。"
 classes: wide
 categories:
-mathjax: true
 - Algorithm
 tags:
 - Machine Learning
@@ -17,6 +16,7 @@ toc: true
 toc_label: "文章提纲"
 toc_icon: "book-reader"
 toc_sticky: true
+mathjax: true
 ---
 
 ## 全书总评
