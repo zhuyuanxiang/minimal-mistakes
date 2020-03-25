@@ -3,7 +3,6 @@ title: "为 minimal-mistakes-jekyll 加入 MathJax 的支持"
 excerpt: "因为 GitHub 的 Markdown 不支持数学公式，只好借助于 MathJax 来实现。"
 classes: wide
 categories:
-mathjax: true
 - Markdown
 tags:
 - MathJax
@@ -12,6 +11,7 @@ toc: true
 toc_label: "文章提纲"
 toc_icon: "book-reader"
 toc_sticky: true
+mathjax: true
 ---
 
 1. 去 [MathJax](http://www.mathjax.org) 下载最新的软件包，一个是 [MathJax Docs](http://docs.mathjax.org/en/latest/installation.html)，还有一个是 [GitHub MathJax](https://github.com/mathjax/MathJax/releases)。
@@ -93,14 +93,14 @@ toc_sticky: true
      \end{split}
      \end{equation}
      $$
-   1. The Cauchy-Schwarz Inequality
+   7. The Cauchy-Schwarz Inequality
 
         $$
         \left( \sum_{k=1}^n a_k b_k \right)^{\!\!2} \leq
         \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
         $$
 
-   2. A Cross Product Formula
+   8. A Cross Product Formula
 
         $$
         \mathbf{V}_1 \times \mathbf{V}_2 =
@@ -111,11 +111,11 @@ toc_sticky: true
         \end{vmatrix}
         $$
 
-   3. The probability of getting //(k//) heads when flipping //(n//) coins is:
+   9. The probability of getting //(k//) heads when flipping //(n//) coins is:
 
         $$P(E) = {n \choose k} p^k (1-p)^{ n-k} $$
 
-   4.  An Identity of Ramanujan
+   10. An Identity of Ramanujan
 
         $$
         \frac{1}{(\sqrt{\phi \sqrt{5}}-\phi) e^{\frac25 \pi}} =
@@ -123,7 +123,7 @@ toc_sticky: true
             {1+\frac{e^{-8\pi}} {1+\ldots} } } }
         $$
 
-   5.  A Rogers-Ramanujan Identity
+   11. A Rogers-Ramanujan Identity
 
         $$
         1 +  \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots =
@@ -131,7 +131,7 @@ toc_sticky: true
             \quad\quad \text{for $|q|<1$}.
         $$
 
-   6.  Maxwell's Equations
+   12. Maxwell's Equations
 
         $$
         \begin{align}
@@ -142,7 +142,7 @@ toc_sticky: true
         \end{align}
         $$
 
-   7.  In-line Mathematics
+   13. In-line Mathematics
 
         Finally, while display equations look good for a page of samples, the
         ability to mix math and text in a paragraph is also important.  This
