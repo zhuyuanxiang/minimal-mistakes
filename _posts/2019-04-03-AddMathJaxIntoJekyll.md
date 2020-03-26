@@ -39,7 +39,7 @@ mathjax: true
     ```
 
 5. 接下来就可以在Markdown中使用MathJax了。(注意：需要在文件头加入 mathjax: true)
-   1. 使用 "\$\$ 公式 \$\$" 表示行间公式
+   1. 使用 "$\$\$ 公式 \$\$$" 表示行间公式
 
         ```tex
         $$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
@@ -49,7 +49,7 @@ mathjax: true
         x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}
         $$
 
-   2. 使用"\$ 公式 \$"表示行内公式
+   2. 使用"$\$ 公式 \$$"表示行内公式
 
         假设$(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$)，则$\cdots$
 
