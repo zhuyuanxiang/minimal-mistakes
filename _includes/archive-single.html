@@ -11,9 +11,11 @@
 {% endif %}
 
   <div class="{{ include.type | default: "list" }}__item">
-  {% if page.mathjax %}
-    MathJax--- OK!
-  {% endif %}
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    {% if page.mathjax %}
+      MathJax.OK!
+    {% endif %}
+  </article>
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     {% if include.type == "grid" and teaser %}
       <div class="archive__item-teaser">
