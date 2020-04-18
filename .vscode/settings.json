@@ -1,4 +1,10 @@
 {
     "python.linting.pylintEnabled": true,
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "cSpell.words": [
+        "collecing",
+        "fork",
+        "hashcode",
+        "zhuyuanxiang"
+    ]
 }

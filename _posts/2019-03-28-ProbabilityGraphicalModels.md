@@ -155,18 +155,16 @@ toc_sticky: true
 
 ## 参考文献
 
-* \[Bishop, 2007] Bishop, C. M. (2007). Pattern Recognition and Machine Learning.
-* \[Koller, 2009] Koller, D., & Friedman, N. (2009). Probabilistic Graphical Models: Principles and Techniques.
-* \[Murphy, 2001] Murphy, Kevin. "An introduction to graphical models." Rap. tech (2001): 1-19.
-* \[肖秦琨，2007] 肖秦琨，高嵩，高晓光。动态贝叶斯网络推理学习理论及应用。 \[M]. 国防工业出版社，2007.
-* \[周志华，2018] 周志华 机器学习 \[M]. 清华大学出版社。2018
-* \[宗成庆，2018] 宗成庆著，统计自然语言处理（第二版）。 \[M]. 清华大学出版社。 2018.
+* [^Bishop,2007] Bishop, C. M. (2007). Pattern Recognition and Machine Learning.
+* [^Koller,2009] Koller, D., & Friedman, N. (2009). Probabilistic Graphical Models: Principles and Techniques.
+* [^Murphy,2001] Murphy, Kevin. "An introduction to graphical models." Rap. tech (2001): 1-19.
+* [^肖秦琨,2007] 肖秦琨，高嵩，高晓光。动态贝叶斯网络推理学习理论及应用, 国防工业出版社, 2007.
+* [^周志华,2018] 周志华 机器学习, 清华大学出版社, 2018.
+* [^宗成庆,2018] 宗成庆著，统计自然语言处理（第二版）, 清华大学出版社, 2018.
 
 ## 符号说明
 
-* Pxx，代表第 xx 页；
-* Cxx，代表第 xx 章；
-* Sxx，代表第 xx 节；
-* Exx，代表第 xx 公式；
-* \[M]，代表图书；
-* \[J]，代表杂志；
+* P_xx，代表第 xx 页
+* Ch_xx，代表第 xx 章
+* Sec_xx，代表第 xx 节
+* Eq_xx，代表第 xx 公式
