@@ -100,8 +100,8 @@ analytics:
 author:
   name             : "zYx.Tom"
   avatar           : "/assets/images/bio-photo.png" # path of avatar image
-  bio              : "Machine Learning & Natural Language Processing！"
-  location         : "中国。四川。成都"
+  bio              : "Machine Learning & Natural Language Processing"
+  location         : "中国.四川.成都"
   email            : zhuyuanxiang@gmail.com
   github           : zhuyuanxiang
   linkedin         : yuanxiang-zhu-93a1a930
