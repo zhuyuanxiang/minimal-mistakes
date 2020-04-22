@@ -1,3 +1,21 @@
+---
+title: "自然语言处理面试常问问题"
+excerpt: ""
+categories:
+- interview
+tags:
+- 面试
+- 笔试
+- 工作
+- 知识库
+create_at: 2019-12-29
+last_modified_at: 2020-04-20
+toc: false
+toc_label: "文章提纲"
+toc_icon: "book-reader"
+toc_sticky: true
+---
+
 # HMM模型
 
 ## 前向-后向算法

@@ -1,5 +1,5 @@
 ---
-title: "2019-07-16-解决sklearn中fetch_lfw_people安装问题"
+title: "Scikit Learn"
 excerpt: ""
 # classes: wide
 categories:
@@ -14,6 +14,8 @@ toc_label: "文章提纲"
 toc_icon: "book-reader"
 toc_sticky: true
 ---
+
+解决sklearn中fetch_lfw_people安装问题
 
 在学习特征脸时，要加载lfw_people，代码如下
 
