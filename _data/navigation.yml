@@ -3,7 +3,7 @@ main:
   - title: "个人介绍"
     url: /about/
   - title: "类别归档"
-  url: /categories-archive/
+    url: /categories-archive/
   - title: "标签归档"
     url: /tag-archive/
   - title: "按年归档"
