@@ -14,3 +14,4 @@ node_modules
 npm-debug.log*
 _dowload/_latex/*.*
 _dowload/_latex/src/*.*
+_docs/*.*
