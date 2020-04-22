@@ -59,16 +59,16 @@ mathjax: true
 
 ## 常用符号
 
--   分数，平方 : $\frac{7x+5}{1+y^2}$ : ` $\frac{7x+5}{1+y^2}$ `
--   下标 : $z=z_l$ : ` $z=z_l$ `
--   省略号 : $\cdots$ : ` $\cdots$ `
--   行间公式 ( 使用两个`$`包含公式可以独立一行 ) : $\frac{d}{dx}e^{ax}=ae^{ax}\quad \sum_{i=1}^{n}{(X_i - \overline{X})^2}$ : ` $\frac{d}{dx}e^{ax}=ae^{ax}\quad \sum_{i=1}^{n}{(X_i - \overline{X})^2}$ `
--   开根号 : $\sqrt{2};\sqrt[n]{3}$ : ` $\sqrt{2};\sqrt[n]{3}$ `
--   矢量 : $\vec{a} \cdot \vec{b}=0$ : ` $\vec{a} \cdot \vec{b}=0$ `
--   积分 : $\int^2_3 x^2 {\rm d}x$ : ` $\int^2_3 x^2 {\rm d}x$ `
--   极限 : $\lim_{n\rightarrow+\infty} n$ : ` $\lim_{n\rightarrow+\infty} n$ `
--   累加 : $\sum \frac{1}{i^2}$ : ` $\sum \frac{1}{i^2}$ `
--   累乘 : $\prod \frac{1}{i^2}$ : ` $\prod \frac{1}{i^2}$ `
+-   分数，平方 : $\frac{7x+5}{1+y^2}$ : `$\frac{7x+5}{1+y^2}$`
+-   下标 : $z=z_l$ : `$z=z_l$`
+-   省略号 : $\cdots$ : `$\cdots$`
+-   行间公式 ( 使用两个`$`包含公式可以独立一行 ) : $\frac{d}{dx}e^{ax}=ae^{ax}\quad \sum_{i=1}^{n}{(X_i - \overline{X})^2}$ : `$\frac{d}{dx}e^{ax}=ae^{ax}\quad\sum_{i=1}^{n}{(X_i - \overline{X})^2}$`
+-   开根号 : $\sqrt{2};\sqrt[n]{3}$ : `$\sqrt{2};\sqrt[n]{3}$`
+-   矢量 : $\vec{a} \cdot \vec{b}=0$ : `$\vec{a} \cdot \vec{b}=0$`
+-   积分 : $\int^2_3 x^2 {\rm d}x$ : `$\int^2_3 x^2 {\rm d}x$`
+-   极限 : $\lim_{n\rightarrow+\infty} n$ : `$\lim_{n\rightarrow+\infty} n$`
+-   累加 : $\sum \frac{1}{i^2}$ : `$\sum \frac{1}{i^2}$`
+-   累乘 : $\prod \frac{1}{i^2}$ : `$\prod \frac{1}{i^2}$`
 
 ## 希腊字母
 
@@ -229,7 +229,7 @@ $$
 \end{vmatrix}
 $$
 
-### The probability of getting $k$ heads when flipping $n$ coins is:
+### The probability of getting $k$ heads when flipping $n$ coins is
 
 ```tex
 P(E) = {n \choose k} p^k (1-p)^{ n-k}
@@ -279,7 +279,7 @@ $$
    \quad\quad \text{for $|q|<1$}.
 $$
 
-### Maxwell's Equations:
+### Maxwell's Equations
 
 ```tex
 \begin{aligned}
@@ -295,8 +295,6 @@ $$
         & = 0
 \end{aligned}
 ```
-
-
 
 $$
 \begin{aligned}

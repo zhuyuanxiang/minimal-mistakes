@@ -6,5 +6,8 @@
         "fork",
         "hashcode",
         "zhuyuanxiang"
+    ],
+    "cSpell.ignoreWords": [
+        "pprint"
     ]
 }
