@@ -2,11 +2,15 @@
 main:
   - title: "个人介绍"
     url: /about/
-  - title: "文章随笔"
+  - title: "类别归档"
+  url: /categories-archive/
+  - title: "标签归档"
+    url: /tag-archive/
+  - title: "按年归档"
     url: /year-archive/
   - title: "个人爱好"
     url: /collection-archive/
   - title: "网站地图"
     url: /sitemap/
-  - title: "Quick-Start Guide"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+  # - title: "Quick-Start Guide"
+    # url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
