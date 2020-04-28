@@ -15,7 +15,7 @@ toc_icon: "book-reader"
 toc_sticky: true
 ---
 
-# VSCode 插件开发
+# 前言
 
  ( 这里就是个对 [微软开发文档](https://code.visualstudio.com/api/get-started/your-first-extension) 的翻译，和网上 [其他文档](https://blog.csdn.net/marksinoberg/article/details/89355341) 的总结 )
 
