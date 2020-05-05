@@ -23,3 +23,9 @@ toc_sticky: true
 ### SubSection Three
 
 This is a test page.
+
+## 标题 2{#section-two}
+
+### 标题 3{#section-three}
+
+依然是个测试页面。测试中文标题+强制英文标签。
