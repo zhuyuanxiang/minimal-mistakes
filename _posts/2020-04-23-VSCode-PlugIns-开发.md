@@ -15,13 +15,13 @@ toc_icon: "book-reader"
 toc_sticky: true
 ---
 
-# 前言
+# Preface
 
  ( 这里就是个对 [微软开发文档](https://code.visualstudio.com/api/get-started/your-first-extension) 的翻译，和网上 [其他文档](https://blog.csdn.net/marksinoberg/article/details/89355341) 的总结 )
 
 动机 : 定制化插件，代码中写入自己需要的部分，简化 VSCode 安装了过多的插件，还可以管理自定义插件的代码和版本，也可以发布到 Market
 
-## 初始环境
+## Initialize Environtent
 
 -   安装 node.js 准备 npm 环境
     -   安装 [Yeoman](http://yeoman.io/) : 用于生成代码框架
@@ -29,9 +29,9 @@ toc_sticky: true
 -   安装 git 环境
 -   安装最新版本的 VSCode
 
-## 开发插件
+## Developing Plugins
 
-### 生成项目
+### New Project
 
 -   安装需要的开发包
 
@@ -65,7 +65,7 @@ code ./helloworld
 -   按`F5`打开「**Extension Development Host**」窗口，按`Ctrl+Shit+P`进入「Command Palette」，输入「Hello World」执行这个项目
 -   在这个新的窗口中会出现「Hello World」的通知，任务完成！
 
-### 修改代码
+### Modify Code
 
 -   打开`extension.js`，修改代码为
 
@@ -76,7 +76,7 @@ vscode.window.showInformationMessage ( 'Hello World from VSCode!' ) ;
 -   按`Ctrl+Shit+P`进入「Command Palette」，输入「Developer: Reload window」重新载入窗口
 -   按`Ctrl+Shit+P`进入「Command Palette」，输入「Hello World」执行这个项目
 
-### 增强项目
+### Advanced Project
 
 -   修改项目在「Command Palette」中显示的内容
     -   修改`package.json`中的代码
@@ -155,13 +155,13 @@ function activate ( context ) {
 
 ```
 
-### 调试项目
+### Debug Code
 
 -   VSCode 可以直接设置断点进行调试
 
 注 : 工具的作用是有限的，长期的开发经验才是关键
 
-### 代码框架
+### Code Architecture
 
 ```javascript
 .
@@ -197,9 +197,9 @@ function activate ( context ) {
         -`activate`: 当插件的 **注册事件** 被激活时时被执行的内容
         -`deactivate`: 当插件的 **注册事件** 去激活时需要清理的内容
 
-## 打包插件
+## Deploying Plugins
 
-### 打包过程
+### Packing Plugins
 
 -   安装 vsce
 
@@ -220,7 +220,7 @@ $ vsce publish
 # 发布打包后的文件到 Market，也可以直接在 VSCode 上安装这个插件
 ```
 
-### Market 发布
+### Deploying in Market
 
 -   去 [Market](https://marketplace.visualstudio.com/VSCode) 注册用户
 -   去 [Publisher](https://marketplace.visualstudio.com/manage) 发布自己编写的插件
@@ -229,7 +229,7 @@ $ vsce publish
 
 注 2：欢迎大家测试我的 Pangu-Markdown-VScode
 
-### 常见的错误
+### Common Errors
 
 -   Error: Missing publisher name. Learn more: [https://code.visualstudio.com...](https://code.visualstudio.com/docs/extensions/publish-extension#_publishing-extensions)
     -   在 package.json 中将刚刚创建好的发布账号配置进去"publisher":"your name"

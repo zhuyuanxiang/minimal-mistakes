@@ -12,7 +12,7 @@ toc: true
 toc_label: "文章提纲"
 ---
 
-## 预备知识
+## Ready
 
 必备软件
 
@@ -29,11 +29,11 @@ toc_label: "文章提纲"
 -   CSS
 -   XML
 
-## 工具
+## Tools
 
 可选 : VSCode+Markdown Preview Github Styling，GitHub Desktop
 
-## 操作
+## Procedure
 
 -   注册一个 GitHub 的账号，可以使用 GitHub Desktop 或者 GitHub 网站；
 -   创建一个空的项目
@@ -56,7 +56,7 @@ toc_label: "文章提纲"
 -   如果还想更漂亮的的页面，更完整功能可以 fork 这个项目 minimal-mistakes
     -   具体修改可以 fork 我的项目 zhuyuanxiang.github.io，改了中文的地方就是我修改的，并且将需要的一些文件从 docs 目录下移到了根目录下。
 
-## 注释
+## Notes
 
 [^footnote1]: 了解编译的进度，可以点 Code 的 commits，进去后会看到自己本次提交的记录，如果后面有个绿色的√就是编译成功了，如果是个红色的×就是编译失败了，失败了主页就无法显示你想要展示的内容。
 
