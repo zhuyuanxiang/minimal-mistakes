@@ -16,3 +16,6 @@ _dowload/_latex/*.*
 _dowload/_latex/src/*.*
 _docs/*.*
 _posts/nppBackup/*.*
+.history/_posts/*.*
+.history/*.*
+.gitignore
