@@ -4,10 +4,9 @@ excerpt: "生活中用到的中医、中药、成方、按摩、穴位等知识"
 categories:
 -   Medicine
 tags:
--   中医
--   中药
--   成方
--   养生
+-   Chinese Medicine
+-   Set Prescription
+-   Health
 create_at: 2020-05-20
 last_modified_at: 2020-05-23
 toc: false

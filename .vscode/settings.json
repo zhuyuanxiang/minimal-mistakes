@@ -9,5 +9,6 @@
     ],
     "cSpell.ignoreWords": [
         "pprint"
-    ]
+    ],
+    "editor.wordWrapColumn": 120
 }

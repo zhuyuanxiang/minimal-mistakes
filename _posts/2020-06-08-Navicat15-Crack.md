@@ -1,3 +1,23 @@
+---
+title: "Navicat 学习日志"
+excerpt: "Navicat"
+# classes: wide
+categories:
+-   Coding
+tags:
+-   MySQL
+-   Database
+-   DBMS
+-   Navicat
+-   Tools
+create_at: 2020-06-08
+last_modified_at: 2020-06-25
+toc: true
+toc_label: "文章提纲"
+toc_icon: "book-reader"
+toc_sticky: true
+---
+
 # [Navicat15 Crack](https://www.cnblogs.com/hfxtest/p/12513210.html)
 
 1.  [官网下载 Navicat Premium](https://www.navicat.com.cn/)

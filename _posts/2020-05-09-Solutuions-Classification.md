@@ -4,7 +4,8 @@ excerpt: "封闭解、解析解、数值解的区别。"
 categories:
 -   Mathematics
 tags:
--   定义
+-   Mathematics
+-   Solution
 create_at: 2020-05-09
 last_modified_at: 2020-05-09
 toc: true

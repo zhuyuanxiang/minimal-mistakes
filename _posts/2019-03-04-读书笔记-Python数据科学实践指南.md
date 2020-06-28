@@ -6,7 +6,7 @@ categories:
 -   Coding
 tags:
 -   Python
--   Programming
+-   Program
 -   Data Science
 create_at: 2019-03-04
 last_modified_at: 2019-03-07

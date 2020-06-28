@@ -8,7 +8,6 @@ tags:
 -   Eclipse
 -   Hibernate
 -   Java
--   SQL Server 2000
 -   Program
 create_at: 2019-01-25
 last_modified_at: 2019-01-26

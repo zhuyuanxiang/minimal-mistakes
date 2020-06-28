@@ -7,7 +7,8 @@ categories:
 tags:
 -   Python
 -   Machine Learning
--   sklearn
+-   Data Science
+-   Scikit-Learn
 last_modified_at: 2019-07-16
 toc: true
 toc_label: "文章提纲"
