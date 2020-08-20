@@ -12,6 +12,7 @@ toc: true
 toc_label: "文章提纲"
 ---
 
+
 ## Ready
 
 必备软件
@@ -28,6 +29,10 @@ toc_label: "文章提纲"
 -   JavaScript
 -   CSS
 -   XML
+
+DNS
+
+-   Ali：223.5.5.5、223.6.6.6
 
 ## Tools
 
